@@ -1,0 +1,1632 @@
+object Main: TMain
+  Left = 0
+  Top = 0
+  Caption = 'Pedidos'
+  ClientHeight = 610
+  ClientWidth = 640
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  OnShow = FormShow
+  DesignerMasterStyle = 0
+  object TCPrincipal: TTabControl
+    Align = Client
+    FullSize = True
+    Size.Width = 640.000000000000000000
+    Size.Height = 610.000000000000000000
+    Size.PlatformDefault = False
+    TabIndex = 3
+    TabOrder = 0
+    TabPosition = PlatformDefault
+    Sizes = (
+      640s
+      584s
+      640s
+      584s
+      640s
+      584s
+      640s
+      584s)
+    object TICliente: TTabItem
+      CustomIcon = <
+        item
+        end>
+      IsSelected = False
+      Size.Width = 159.000000000000000000
+      Size.Height = 26.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'Clientes'
+      ExplicitSize.cx = 57.000000000000000000
+      ExplicitSize.cy = 26.000000000000000000
+      object ToolBar1: TToolBar
+        Size.Width = 640.000000000000000000
+        Size.Height = 40.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 1
+        object SpeedButton1: TSpeedButton
+          Align = MostLeft
+          Size.Width = 80.000000000000000000
+          Size.Height = 40.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = 'arrowlefttoolbutton'
+          Text = 'SpeedButton1'
+        end
+        object Label22: TLabel
+          Align = Client
+          StyledSettings = [FontColor]
+          Size.Width = 480.000000000000000000
+          Size.Height = 40.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Family = 'Arial'
+          TextSettings.Font.Size = 16.000000000000000000
+          TextSettings.Font.StyleExt = {00090000000000000004000000}
+          TextSettings.HorzAlign = Center
+          Text = 'Clientes'
+          TabOrder = 0
+        end
+        object SpeedButton8: TSpeedButton
+          Align = Right
+          Position.X = 560.000000000000000000
+          Size.Width = 80.000000000000000000
+          Size.Height = 40.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = 'drawertoolbuttonbordered'
+          Text = 'SpeedButton8'
+        end
+      end
+      object SBTerceros: TSearchBox
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        Align = Top
+        TabOrder = 0
+        Position.Y = 40.000000000000000000
+        Size.Width = 640.000000000000000000
+        Size.Height = 48.000000000000000000
+        Size.PlatformDefault = False
+        OnKeyDown = SBTercerosKeyDown
+      end
+      object lblNohayTerceros: TLabel
+        Align = VertCenter
+        Position.Y = 257.000000000000000000
+        Size.Width = 640.000000000000000000
+        Size.Height = 27.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.HorzAlign = Center
+        Text = 'No se encontraron clientes'
+        Visible = False
+        TabOrder = 54
+      end
+      object ListView1: TListView
+        ItemAppearanceClassName = 'TListItemAppearance'
+        ItemEditAppearanceClassName = 'TListItemShowCheckAppearance'
+        HeaderAppearanceClassName = 'TListHeaderObjects'
+        FooterAppearanceClassName = 'TListHeaderObjects'
+        Align = Client
+        Size.Width = 640.000000000000000000
+        Size.Height = 496.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 55
+        OnItemClick = ListView1ItemClick
+      end
+    end
+    object TIInformacion_Cliente: TTabItem
+      CustomIcon = <
+        item
+        end>
+      IsSelected = False
+      Size.Width = 159.000000000000000000
+      Size.Height = 26.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'Informacion Cliente'
+      ExplicitSize.cx = 212.000000000000000000
+      ExplicitSize.cy = 26.000000000000000000
+      object ToolBar2: TToolBar
+        Size.Width = 640.000000000000000000
+        Size.Height = 40.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 2
+        object SpeedButton2: TSpeedButton
+          Align = Left
+          Size.Width = 80.000000000000000000
+          Size.Height = 40.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = 'backtoolbutton'
+          Text = 'Atras'
+          OnClick = SpeedButton2Click
+        end
+        object SpeedButton3: TSpeedButton
+          Align = Right
+          Position.X = 560.000000000000000000
+          Size.Width = 80.000000000000000000
+          Size.Height = 40.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = 'pagecurltoolbutton'
+          Text = 'SpeedButton3'
+          OnClick = SpeedButton3Click
+        end
+        object Label23: TLabel
+          Align = Client
+          StyledSettings = [FontColor]
+          Size.Width = 480.000000000000000000
+          Size.Height = 40.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Family = 'Arial'
+          TextSettings.Font.Size = 16.000000000000000000
+          TextSettings.Font.StyleExt = {00090000000000000004000000}
+          TextSettings.HorzAlign = Center
+          Text = 'Datos Del Cliente'
+          TabOrder = 0
+        end
+      end
+      object Panel3: TPanel
+        Align = Top
+        Position.Y = 40.000000000000000000
+        Size.Width = 640.000000000000000000
+        Size.Height = 137.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 3
+        object EdNit: TEdit
+          Touch.InteractiveGestures = [LongTap, DoubleTap]
+          TabOrder = 0
+          ReadOnly = True
+          Position.X = 136.000000000000000000
+          Position.Y = 30.000000000000000000
+          Size.Width = 120.000000000000000000
+          Size.Height = 27.000000000000000000
+          Size.PlatformDefault = False
+        end
+        object Label8: TLabel
+          Position.X = 16.000000000000000000
+          Position.Y = 30.000000000000000000
+          Size.Width = 120.000000000000000000
+          Size.Height = 27.000000000000000000
+          Size.PlatformDefault = False
+          Text = 'Nit:'
+          TabOrder = 1
+        end
+        object LNombre_Cliente: TLabel
+          Align = Top
+          StyledSettings = [FontColor]
+          Size.Width = 640.000000000000000000
+          Size.Height = 33.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Family = 'Arial'
+          TextSettings.Font.Size = 14.000000000000000000
+          TextSettings.Font.StyleExt = {00090000000000000004000000}
+          Text = '   Nombre del Cliente'
+          TabOrder = 2
+        end
+        object Label10: TLabel
+          Position.X = 16.000000000000000000
+          Position.Y = 64.000000000000000000
+          Size.Width = 120.000000000000000000
+          Size.Height = 27.000000000000000000
+          Size.PlatformDefault = False
+          Text = 'Telefono:'
+          TabOrder = 4
+        end
+        object CBTelefonos: TComboBox
+          Position.X = 136.000000000000000000
+          Position.Y = 64.000000000000000000
+          Size.Width = 120.000000000000000000
+          Size.Height = 27.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 6
+        end
+        object CBShipto: TComboBox
+          ItemIndex = 0
+          Position.X = 136.000000000000000000
+          Position.Y = 104.000000000000000000
+          Size.Width = 120.000000000000000000
+          Size.Height = 27.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 5
+        end
+        object Label11: TLabel
+          Position.X = 16.000000000000000000
+          Position.Y = 104.000000000000000000
+          Size.Width = 120.000000000000000000
+          Size.Height = 27.000000000000000000
+          Size.PlatformDefault = False
+          Text = 'Direccion:'
+          TabOrder = 3
+        end
+      end
+      object pnlTotalCartera: TPanel
+        Align = Bottom
+        Position.Y = 536.000000000000000000
+        Size.Width = 640.000000000000000000
+        Size.Height = 48.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 4
+        object Layout1: TLayout
+          Align = Top
+          Size.Width = 640.000000000000000000
+          Size.Height = 24.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 0
+          object btDisponible: TButton
+            Align = Client
+            Size.Width = 640.000000000000000000
+            Size.Height = 24.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 0
+            Text = #8593#8593#8593
+            OnClick = btDisponibleClick
+          end
+        end
+        object Layout2: TLayout
+          Align = Client
+          Size.Width = 640.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 1
+          object Label9: TLabel
+            Align = Left
+            StyledSettings = [Size, FontColor]
+            Size.Width = 120.000000000000000000
+            Size.PlatformDefault = False
+            TextSettings.Font.Family = 'Arial'
+            TextSettings.Font.StyleExt = {00090000000000000004000000}
+            Text = '  Disponible:'
+            TabOrder = 0
+          end
+          object LTDisponible: TLabel
+            Align = Client
+            StyledSettings = [Size, Style, FontColor]
+            Size.Width = 520.000000000000000000
+            Size.PlatformDefault = False
+            TextSettings.Font.Family = 'Arial'
+            TextSettings.HorzAlign = Trailing
+            Text = '$ 0'
+            TabOrder = 1
+          end
+        end
+        object Layout3: TLayout
+          Align = Bottom
+          Position.Y = 24.000000000000000000
+          Size.Width = 640.000000000000000000
+          Size.Height = 24.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 2
+          object Label14: TLabel
+            Align = Left
+            StyledSettings = [Size, FontColor]
+            Size.Width = 120.000000000000000000
+            Size.Height = 24.000000000000000000
+            Size.PlatformDefault = False
+            TextSettings.Font.Family = 'Arial'
+            TextSettings.Font.StyleExt = {00090000000000000004000000}
+            Text = '  Cupo:'
+            TabOrder = 3
+          end
+          object LTCupo: TLabel
+            Align = Left
+            StyledSettings = [Size, FontColor]
+            Position.X = 120.000000000000000000
+            Size.Width = 120.000000000000000000
+            Size.Height = 24.000000000000000000
+            Size.PlatformDefault = False
+            TextSettings.Font.Family = 'Arial'
+            TextSettings.HorzAlign = Trailing
+            Text = '$ 0'
+            TabOrder = 0
+          end
+          object Label15: TLabel
+            Align = Left
+            StyledSettings = [Size, FontColor]
+            Position.X = 240.000000000000000000
+            Size.Width = 120.000000000000000000
+            Size.Height = 24.000000000000000000
+            Size.PlatformDefault = False
+            TextSettings.Font.Family = 'Arial'
+            TextSettings.Font.StyleExt = {00090000000000000004000000}
+            Text = '  Cartera:'
+            TabOrder = 2
+          end
+          object LTCartera: TLabel
+            Align = Client
+            StyledSettings = [Size, Style, FontColor]
+            Size.Width = 280.000000000000000000
+            Size.Height = 24.000000000000000000
+            Size.PlatformDefault = False
+            TextSettings.Font.Family = 'Arial'
+            TextSettings.HorzAlign = Trailing
+            Text = '$ 0'
+            TabOrder = 1
+          end
+        end
+      end
+      object LVCartera: TListView
+        ItemAppearanceClassName = 'TDynamicAppearance'
+        ItemEditAppearanceClassName = 'TDynamicAppearance'
+        HeaderAppearanceClassName = 'TListHeaderObjects'
+        FooterAppearanceClassName = 'TListHeaderObjects'
+        AlternatingColors = True
+        Align = Client
+        Size.Width = 640.000000000000000000
+        Size.Height = 359.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 1
+        ItemAppearance.ItemHeight = 80
+        ItemAppearanceObjects.ItemObjects.ObjectsCollection = <
+          item
+            AppearanceObjectName = 'Numero'
+            AppearanceClassName = 'TTextObjectAppearance'
+            Appearance.Font.Size = 14.000000000000000000
+            Appearance.TextAlign = Leading
+            Appearance.Width = 307.000000000000000000
+            Appearance.Height = 20.000000000000000000
+            Appearance.PlaceOffset.X = 8.000000000000000000
+          end
+          item
+            AppearanceObjectName = 'Saldo'
+            AppearanceClassName = 'TTextObjectAppearance'
+            Appearance.Font.Family = '(Default)'
+            Appearance.TextAlign = Leading
+            Appearance.Width = 307.000000000000000000
+            Appearance.Height = 20.000000000000000000
+            Appearance.PlaceOffset.X = 8.000000000000000000
+            Appearance.PlaceOffset.Y = 18.000000000000000000
+          end
+          item
+            AppearanceObjectName = 'DiasVencimiento'
+            AppearanceClassName = 'TTextObjectAppearance'
+            Appearance.TextAlign = Leading
+            Appearance.Width = 307.000000000000000000
+            Appearance.Height = 20.000000000000000000
+            Appearance.PlaceOffset.X = 8.000000000000000000
+            Appearance.PlaceOffset.Y = 38.000000000000000000
+          end
+          item
+            AppearanceObjectName = 'FechaFactura'
+            AppearanceClassName = 'TTextObjectAppearance'
+            Appearance.TextAlign = Leading
+            Appearance.Width = 400.000000000000000000
+            Appearance.Height = 20.000000000000000000
+            Appearance.PlaceOffset.X = 8.000000000000000000
+            Appearance.PlaceOffset.Y = 58.000000000000000000
+          end>
+        ItemAppearanceObjects.ItemEditObjects.ObjectsCollection = <
+          item
+            AppearanceObjectName = 'Text1'
+            AppearanceClassName = 'TTextObjectAppearance'
+          end>
+        ItemAppearanceObjects.HeaderObjects.Text.Font.Size = 16.000000000000000000
+        ItemAppearanceObjects.FooterObjects.Text.WordWrap = True
+        CanSwipeDelete = False
+        DeleteButtonText = 'Eliminar'
+        AutoTapScroll = True
+        SelectionCrossfade = True
+        object Label12: TLabel
+          Align = VertCenter
+          Position.Y = 144.000000000000000000
+          Size.Width = 385.000000000000000000
+          Size.Height = 23.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.HorzAlign = Center
+          Text = 'No tiene cartera pendiente'
+          Visible = False
+        end
+        object lblNoTieneCartera: TLabel
+          Align = VertCenter
+          Position.Y = 144.000000000000000000
+          Size.Width = 385.000000000000000000
+          Size.Height = 23.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.HorzAlign = Center
+          Text = 'No tiene cartera pendiente'
+          Visible = False
+          TabOrder = 0
+        end
+      end
+    end
+    object TIPedido: TTabItem
+      CustomIcon = <
+        item
+        end>
+      IsSelected = False
+      Size.Width = 159.000000000000000000
+      Size.Height = 26.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'Pedido'
+      ExplicitSize.cx = 214.000000000000000000
+      ExplicitSize.cy = 26.000000000000000000
+      object Panel4: TPanel
+        Align = Top
+        Position.Y = 48.000000000000000000
+        Size.Width = 640.000000000000000000
+        Size.Height = 137.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        object EdNitPedido: TEdit
+          Touch.InteractiveGestures = [LongTap, DoubleTap]
+          TabOrder = 0
+          Position.X = 136.000000000000000000
+          Position.Y = 30.000000000000000000
+          Size.Width = 120.000000000000000000
+          Size.Height = 27.000000000000000000
+          Size.PlatformDefault = False
+        end
+        object Label13: TLabel
+          Position.X = 16.000000000000000000
+          Position.Y = 30.000000000000000000
+          Size.Width = 120.000000000000000000
+          Size.Height = 27.000000000000000000
+          Size.PlatformDefault = False
+          Text = 'Nit:'
+          TabOrder = 1
+        end
+        object LNombre_ClientePedido: TLabel
+          Align = Top
+          StyledSettings = [FontColor]
+          Size.Width = 640.000000000000000000
+          Size.Height = 33.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Family = 'Arial'
+          TextSettings.Font.Size = 14.000000000000000000
+          TextSettings.Font.StyleExt = {00090000000000000004000000}
+          Text = '   Nombre del Cliente'
+          TabOrder = 2
+        end
+        object Label17: TLabel
+          Position.X = 16.000000000000000000
+          Position.Y = 64.000000000000000000
+          Size.Width = 120.000000000000000000
+          Size.Height = 27.000000000000000000
+          Size.PlatformDefault = False
+          Text = 'Telefono:'
+          TabOrder = 4
+        end
+        object BtTelefono: TComboBox
+          Position.X = 136.000000000000000000
+          Position.Y = 64.000000000000000000
+          Size.Width = 120.000000000000000000
+          Size.Height = 27.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 6
+        end
+        object cbShiptoDetPed: TComboBox
+          ItemIndex = 0
+          Position.X = 136.000000000000000000
+          Position.Y = 104.000000000000000000
+          Size.Width = 120.000000000000000000
+          Size.Height = 27.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 5
+        end
+        object Label18: TLabel
+          Position.X = 16.000000000000000000
+          Position.Y = 104.000000000000000000
+          Size.Width = 120.000000000000000000
+          Size.Height = 27.000000000000000000
+          Size.PlatformDefault = False
+          Text = 'Direccion:'
+          TabOrder = 3
+        end
+        object Label16: TLabel
+          Position.X = 312.000000000000000000
+          Position.Y = 30.000000000000000000
+          Size.Width = 120.000000000000000000
+          Size.Height = 27.000000000000000000
+          Size.PlatformDefault = False
+          Text = 'Fecha De Entrega:'
+          TabOrder = 8
+        end
+        object Label19: TLabel
+          Position.X = 312.000000000000000000
+          Position.Y = 64.000000000000000000
+          Size.Width = 120.000000000000000000
+          Size.Height = 27.000000000000000000
+          Size.PlatformDefault = False
+          Text = 'Orden De Compra:'
+          TabOrder = 7
+        end
+        object DateEdit1: TDateEdit
+          Date = 43402.000000000000000000
+          Position.X = 456.000000000000000000
+          Position.Y = 30.000000000000000000
+          Size.Width = 120.000000000000000000
+          Size.Height = 27.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 9
+        end
+        object Edit1: TEdit
+          Touch.InteractiveGestures = [LongTap, DoubleTap]
+          TabOrder = 10
+          Position.X = 456.000000000000000000
+          Position.Y = 64.000000000000000000
+          Size.Width = 120.000000000000000000
+          Size.Height = 27.000000000000000000
+          Size.PlatformDefault = False
+        end
+      end
+      object ToolBar3: TToolBar
+        Size.Width = 640.000000000000000000
+        Size.Height = 48.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 1
+        object SpeedButton5: TSpeedButton
+          Align = Left
+          Size.Width = 48.000000000000000000
+          Size.Height = 48.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = 'backtoolbutton'
+          Text = 'Atras'
+          OnClick = SpeedButton2Click
+        end
+        object SpeedButton6: TSpeedButton
+          Align = Right
+          Position.X = 592.000000000000000000
+          Size.Width = 48.000000000000000000
+          Size.Height = 48.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = 'playtoolbuttonbordered'
+          Text = 'SpeedButton3'
+          OnClick = SpeedButton6Click
+        end
+        object Label26: TLabel
+          Align = Client
+          StyledSettings = [FontColor]
+          Size.Width = 544.000000000000000000
+          Size.Height = 48.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Family = 'Arial'
+          TextSettings.Font.Size = 16.000000000000000000
+          TextSettings.Font.StyleExt = {00090000000000000004000000}
+          TextSettings.HorzAlign = Center
+          Text = 'Pedido'
+          TabOrder = 0
+        end
+      end
+      object TAPedido: TTabControl
+        Align = Client
+        Size.Width = 640.000000000000000000
+        Size.Height = 399.000000000000000000
+        Size.PlatformDefault = False
+        TabIndex = 1
+        TabOrder = 2
+        TabPosition = PlatformDefault
+        Sizes = (
+          640s
+          373s
+          640s
+          373s)
+        object TIDetalleItem: TTabItem
+          CustomIcon = <
+            item
+            end>
+          IsSelected = False
+          Size.Width = 85.000000000000000000
+          Size.Height = 26.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = ''
+          TabOrder = 0
+          Text = 'Detalle Item'
+          ExplicitSize.cx = 85.000000000000000000
+          ExplicitSize.cy = 26.000000000000000000
+          object ListBox1: TListBox
+            Align = Client
+            Size.Width = 640.000000000000000000
+            Size.Height = 340.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 1
+            DisableFocusEffect = True
+            DefaultItemStyles.ItemStyle = ''
+            DefaultItemStyles.GroupHeaderStyle = ''
+            DefaultItemStyles.GroupFooterStyle = ''
+            Viewport.Width = 636.000000000000000000
+            Viewport.Height = 336.000000000000000000
+            object ListBoxItem1: TListBoxItem
+              Size.Width = 636.000000000000000000
+              Size.Height = 25.000000000000000000
+              Size.PlatformDefault = False
+              TabOrder = 0
+              Text = 'Cantidad'
+              object EdCantidad: TEdit
+                Touch.InteractiveGestures = [LongTap, DoubleTap]
+                Align = Right
+                TabOrder = 0
+                Position.X = 516.000000000000000000
+                Size.Width = 120.000000000000000000
+                Size.Height = 25.000000000000000000
+                Size.PlatformDefault = False
+              end
+            end
+            object ListBoxItem2: TListBoxItem
+              Position.Y = 25.000000000000000000
+              Size.Width = 636.000000000000000000
+              Size.Height = 25.000000000000000000
+              Size.PlatformDefault = False
+              TabOrder = 1
+              Text = 'Valor Unitario'
+              object EdvlrUnitario: TEdit
+                Touch.InteractiveGestures = [LongTap, DoubleTap]
+                Align = Right
+                TabOrder = 0
+                Position.X = 516.000000000000000000
+                Size.Width = 120.000000000000000000
+                Size.Height = 25.000000000000000000
+                Size.PlatformDefault = False
+              end
+            end
+            object ListBoxItem3: TListBoxItem
+              Position.Y = 50.000000000000000000
+              Size.Width = 636.000000000000000000
+              Size.Height = 25.000000000000000000
+              Size.PlatformDefault = False
+              TabOrder = 2
+              Text = 'Total sin IVA'
+              object EdTSIva: TEdit
+                Touch.InteractiveGestures = [LongTap, DoubleTap]
+                Align = Right
+                TabOrder = 0
+                Position.X = 516.000000000000000000
+                Size.Width = 120.000000000000000000
+                Size.Height = 25.000000000000000000
+                Size.PlatformDefault = False
+              end
+            end
+            object ListBoxItem4: TListBoxItem
+              Position.Y = 75.000000000000000000
+              Size.Width = 636.000000000000000000
+              Size.Height = 25.000000000000000000
+              Size.PlatformDefault = False
+              TabOrder = 3
+              Text = 'IVA'
+              object EdTCIva: TEdit
+                Touch.InteractiveGestures = [LongTap, DoubleTap]
+                Align = Right
+                TabOrder = 0
+                Position.X = 516.000000000000000000
+                Size.Width = 120.000000000000000000
+                Size.Height = 25.000000000000000000
+                Size.PlatformDefault = False
+              end
+            end
+            object ListBoxItem5: TListBoxItem
+              Position.Y = 100.000000000000000000
+              Size.Width = 636.000000000000000000
+              Size.Height = 25.000000000000000000
+              Size.PlatformDefault = False
+              TabOrder = 4
+              Text = 'Total'
+              object EdITotal: TEdit
+                Touch.InteractiveGestures = [LongTap, DoubleTap]
+                Align = Right
+                TabOrder = 0
+                Position.X = 516.000000000000000000
+                Size.Width = 120.000000000000000000
+                Size.Height = 25.000000000000000000
+                Size.PlatformDefault = False
+              end
+            end
+            object ListBoxGroupHeader1: TListBoxGroupHeader
+              Position.Y = 125.000000000000000000
+              Size.Width = 636.000000000000000000
+              Size.Height = 25.000000000000000000
+              Size.PlatformDefault = False
+              TabOrder = 5
+              Text = 'Total de Pedido'
+            end
+            object ListBoxItem6: TListBoxItem
+              Position.Y = 150.000000000000000000
+              Size.Width = 636.000000000000000000
+              Size.Height = 25.000000000000000000
+              Size.PlatformDefault = False
+              TabOrder = 6
+              Text = 'IVA'
+              object EdIva: TEdit
+                Touch.InteractiveGestures = [LongTap, DoubleTap]
+                Align = Right
+                TabOrder = 0
+                Position.X = 516.000000000000000000
+                Size.Width = 120.000000000000000000
+                Size.Height = 25.000000000000000000
+                Size.PlatformDefault = False
+              end
+            end
+            object ListBoxItem7: TListBoxItem
+              Position.Y = 175.000000000000000000
+              Size.Width = 636.000000000000000000
+              Size.Height = 25.000000000000000000
+              Size.PlatformDefault = False
+              TabOrder = 7
+              Text = 'Total'
+              object EdTotal: TEdit
+                Touch.InteractiveGestures = [LongTap, DoubleTap]
+                Align = Right
+                TabOrder = 0
+                Position.X = 516.000000000000000000
+                Size.Width = 120.000000000000000000
+                Size.Height = 25.000000000000000000
+                Size.PlatformDefault = False
+              end
+            end
+            object ListBoxGroupHeader2: TListBoxGroupHeader
+              Position.Y = 200.000000000000000000
+              Size.Width = 636.000000000000000000
+              Size.Height = 25.000000000000000000
+              Size.PlatformDefault = False
+              TabOrder = 8
+              Text = 'Ubicaci'#243'n'
+            end
+            object ListBoxItem8: TListBoxItem
+              Position.Y = 225.000000000000000000
+              Size.Width = 636.000000000000000000
+              Size.Height = 25.000000000000000000
+              Size.PlatformDefault = False
+              TabOrder = 9
+              Text = 'Bodega'
+              object EdBodega: TEdit
+                Touch.InteractiveGestures = [LongTap, DoubleTap]
+                Align = Right
+                TabOrder = 0
+                Position.X = 516.000000000000000000
+                Size.Width = 120.000000000000000000
+                Size.Height = 25.000000000000000000
+                Size.PlatformDefault = False
+              end
+            end
+            object Panel6: TPanel
+              Align = Bottom
+              Position.Y = 292.000000000000000000
+              Size.Width = 636.000000000000000000
+              Size.Height = 44.000000000000000000
+              Size.PlatformDefault = False
+              TabOrder = 0
+              object SpeedButton9: TSpeedButton
+                Align = Right
+                Position.X = 556.000000000000000000
+                Size.Width = 80.000000000000000000
+                Size.Height = 44.000000000000000000
+                Size.PlatformDefault = False
+                StyleLookup = 'trashtoolbuttonbordered'
+                Text = 'SpeedButton4'
+              end
+            end
+          end
+          object Label27: TLabel
+            Align = Top
+            StyledSettings = [FontColor]
+            Size.Width = 640.000000000000000000
+            Size.Height = 33.000000000000000000
+            Size.PlatformDefault = False
+            TextSettings.Font.Family = 'Arial'
+            TextSettings.Font.Size = 16.000000000000000000
+            TextSettings.Font.StyleExt = {00090000000000000004000000}
+            TextSettings.HorzAlign = Center
+            TabOrder = 0
+          end
+        end
+        object TIPedidoItems: TTabItem
+          CustomIcon = <
+            item
+            end>
+          IsSelected = True
+          Size.Width = 110.000000000000000000
+          Size.Height = 26.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = ''
+          TabOrder = 0
+          Text = 'Items Del Pedido'
+          ExplicitSize.cx = 110.000000000000000000
+          ExplicitSize.cy = 26.000000000000000000
+          object Panel5: TPanel
+            Align = Bottom
+            Position.Y = 329.000000000000000000
+            Size.Width = 640.000000000000000000
+            Size.Height = 44.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 0
+            object Label20: TLabel
+              Align = Left
+              StyledSettings = [Size, FontColor]
+              Size.Width = 97.000000000000000000
+              Size.Height = 44.000000000000000000
+              Size.PlatformDefault = False
+              TextSettings.Font.Family = 'Arial'
+              TextSettings.Font.StyleExt = {00090000000000000004000000}
+              Text = '  Total Pedido:'
+              TabOrder = 0
+            end
+            object SpeedButton4: TSpeedButton
+              Align = Right
+              Position.X = 560.000000000000000000
+              Size.Width = 80.000000000000000000
+              Size.Height = 44.000000000000000000
+              Size.PlatformDefault = False
+              StyleLookup = 'addtoolbuttonbordered'
+              Text = 'SpeedButton4'
+              OnClick = SpeedButton4Click
+            end
+            object LbTotalPedido: TLabel
+              Align = Client
+              StyledSettings = [Size, Style, FontColor]
+              Size.Width = 463.000000000000000000
+              Size.Height = 44.000000000000000000
+              Size.PlatformDefault = False
+              TextSettings.Font.Family = 'Arial'
+              TextSettings.HorzAlign = Trailing
+              Text = '$'
+              TabOrder = 2
+            end
+          end
+          object ListView2: TListView
+            ItemAppearanceClassName = 'TDynamicAppearance'
+            ItemEditAppearanceClassName = 'TDynamicAppearance'
+            HeaderAppearanceClassName = 'TListHeaderObjects'
+            FooterAppearanceClassName = 'TListHeaderObjects'
+            Align = Client
+            Size.Width = 640.000000000000000000
+            Size.Height = 329.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 8
+            ItemAppearance.ItemHeight = 100
+            ItemAppearance.ItemEditHeight = 100
+            ItemAppearanceObjects.ItemObjects.ObjectsCollection = <
+              item
+                AppearanceObjectName = 'Text1'
+                AppearanceClassName = 'TTextObjectAppearance'
+              end
+              item
+                AppearanceObjectName = 'Text2'
+                AppearanceClassName = 'TTextObjectAppearance'
+              end
+              item
+                AppearanceObjectName = 'Text3'
+                AppearanceClassName = 'TTextObjectAppearance'
+              end
+              item
+                AppearanceObjectName = 'Text4'
+                AppearanceClassName = 'TTextObjectAppearance'
+              end>
+            ItemAppearanceObjects.ItemEditObjects.ObjectsCollection = <
+              item
+                AppearanceObjectName = 'Text1'
+                AppearanceClassName = 'TTextObjectAppearance'
+              end
+              item
+                AppearanceObjectName = 'Text2'
+                AppearanceClassName = 'TTextObjectAppearance'
+              end
+              item
+                AppearanceObjectName = 'Text3'
+                AppearanceClassName = 'TTextObjectAppearance'
+              end
+              item
+                AppearanceObjectName = 'Text4'
+                AppearanceClassName = 'TTextObjectAppearance'
+              end>
+            OnItemClick = ListView2ItemClick
+          end
+        end
+      end
+    end
+    object TIBucar_Item: TTabItem
+      CustomIcon = <
+        item
+        end>
+      IsSelected = True
+      Size.Width = 161.000000000000000000
+      Size.Height = 26.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'Buscar Items'
+      ExplicitSize.cx = 161.000000000000000000
+      ExplicitSize.cy = 26.000000000000000000
+      object ToolBar4: TToolBar
+        Size.Width = 640.000000000000000000
+        Size.Height = 40.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        object SpeedButton7: TSpeedButton
+          Align = Left
+          Size.Width = 80.000000000000000000
+          Size.Height = 40.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = 'arrowlefttoolbuttonbordered'
+          Text = 'SpeedButton7'
+          OnClick = SpeedButton7Click
+        end
+        object Label24: TLabel
+          Align = Client
+          StyledSettings = [FontColor]
+          Size.Width = 560.000000000000000000
+          Size.Height = 40.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Family = 'Arial'
+          TextSettings.Font.Size = 16.000000000000000000
+          TextSettings.Font.StyleExt = {00090000000000000004000000}
+          TextSettings.HorzAlign = Center
+          Text = 'Busqueda De Productos'
+          TabOrder = 0
+        end
+      end
+      object TCBusquedaItems: TTabControl
+        Align = Client
+        FullSize = True
+        Size.Width = 640.000000000000000000
+        Size.Height = 544.000000000000000000
+        Size.PlatformDefault = False
+        TabHeight = 49.000000000000000000
+        TabIndex = 0
+        TabOrder = 3
+        TabPosition = PlatformDefault
+        Sizes = (
+          640s
+          495s
+          640s
+          495s)
+        object TIBusquedaItems: TTabItem
+          CustomIcon = <
+            item
+            end>
+          IsSelected = True
+          Size.Width = 319.000000000000000000
+          Size.Height = 49.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = ''
+          TabOrder = 0
+          Text = 'Productos'
+          ExplicitSize.cx = 193.000000000000000000
+          ExplicitSize.cy = 49.000000000000000000
+          object SBItems: TSearchBox
+            Touch.InteractiveGestures = [LongTap, DoubleTap]
+            Align = Top
+            TabOrder = 0
+            Size.Width = 640.000000000000000000
+            Size.Height = 48.000000000000000000
+            Size.PlatformDefault = False
+            OnKeyDown = SBItemsKeyDown
+          end
+          object LVItems: TListView
+            ItemAppearanceClassName = 'TListItemRightDetailAppearance'
+            ItemEditAppearanceClassName = 'TListItemRightDetailDeleteAppearance'
+            HeaderAppearanceClassName = 'TListHeaderObjects'
+            FooterAppearanceClassName = 'TListHeaderObjects'
+            Align = Client
+            Size.Width = 640.000000000000000000
+            Size.Height = 447.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 2
+            OnItemClick = LVItemsItemClick
+          end
+        end
+        object TIDisponibilidadItem: TTabItem
+          CustomIcon = <
+            item
+            end>
+          IsSelected = False
+          Size.Width = 319.000000000000000000
+          Size.Height = 49.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = ''
+          TabOrder = 0
+          Text = 'Disponibilidad'
+          ExplicitSize.cx = 192.000000000000000000
+          ExplicitSize.cy = 49.000000000000000000
+          object LVDisponibilidadItem: TListView
+            ItemAppearanceClassName = 'TDynamicAppearance'
+            ItemEditAppearanceClassName = 'TDynamicAppearance'
+            HeaderAppearanceClassName = 'TListHeaderObjects'
+            FooterAppearanceClassName = 'TListHeaderObjects'
+            Align = Client
+            Size.Width = 640.000000000000000000
+            Size.Height = 470.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 0
+            ItemAppearance.ItemHeight = 50
+            ItemAppearanceObjects.ItemObjects.ObjectsCollection = <
+              item
+                AppearanceObjectName = 'Lote'
+                AppearanceClassName = 'TTextObjectAppearance'
+                Appearance.TextAlign = Leading
+                Appearance.TextVertAlign = Leading
+                Appearance.Width = 359.000000000000000000
+                Appearance.Height = 25.000000000000000000
+              end
+              item
+                AppearanceObjectName = 'Cantidad'
+                AppearanceClassName = 'TTextObjectAppearance'
+                Appearance.TextAlign = Leading
+                Appearance.TextVertAlign = Trailing
+                Appearance.Width = 361.000000000000000000
+                Appearance.Height = 25.000000000000000000
+                Appearance.PlaceOffset.X = -2.000000000000000000
+                Appearance.PlaceOffset.Y = 24.000000000000000000
+              end>
+            ItemAppearanceObjects.ItemEditObjects.ObjectsCollection = <
+              item
+                AppearanceObjectName = 'Text1'
+                AppearanceClassName = 'TTextObjectAppearance'
+                Appearance.Width = 363.000000000000000000
+                Appearance.Height = 44.000000000000000000
+              end>
+            ItemAppearanceObjects.FooterObjects.Text.Width = 603.000000000000000000
+            ItemAppearanceObjects.FooterObjects.Text.PlaceOffset.Y = 4.000000000000000000
+            OnItemClick = LVDisponibilidadItemItemClick
+            object lblNoExistencias: TLabel
+              Align = VertCenter
+              Position.Y = 223.000000000000000000
+              Size.Width = 640.000000000000000000
+              Size.Height = 23.000000000000000000
+              Size.PlatformDefault = False
+              TextSettings.HorzAlign = Center
+              Text = 'No hay existencias del Producto'
+            end
+          end
+          object lblItemSeleccionado: TLabel
+            Align = Top
+            StyledSettings = [Family, Size, FontColor]
+            Size.Width = 640.000000000000000000
+            Size.Height = 25.000000000000000000
+            Size.PlatformDefault = False
+            TextSettings.Font.StyleExt = {00070000000000000004000000}
+            TextSettings.HorzAlign = Center
+            Text = 'Busque un Producto'
+            TabOrder = 1
+          end
+        end
+      end
+    end
+  end
+  object CPGeneral: TCalloutPanel
+    Padding.Left = 11.000000000000000000
+    Position.X = 255.000000000000000000
+    Position.Y = 74.000000000000000000
+    Size.Width = 346.000000000000000000
+    Size.Height = 60.000000000000000000
+    Size.PlatformDefault = False
+    Visible = False
+    TabOrder = 3
+    CalloutWidth = 23.000000000000000000
+    CalloutLength = 11.000000000000000000
+    CalloutPosition = Left
+    object FAGeneral: TFloatAnimation
+      Duration = 2.000000000000000000
+      OnFinish = FAGeneralFinish
+      PropertyName = 'Opacity'
+      StartValue = 0.000000000000000000
+      StopValue = 1.000000000000000000
+    end
+    object LGMensaje: TLabel
+      Align = Client
+      StyledSettings = [Size, FontColor]
+      Size.Width = 335.000000000000000000
+      Size.Height = 60.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.Font.Family = 'Arial'
+      TextSettings.Font.StyleExt = {00070000000000000004000000}
+      TextSettings.HorzAlign = Center
+      Text = 'Revise su conexi'#243'n a Internet y los datos del Servidor'
+      TabOrder = 0
+    end
+    object ShadowEffect1: TShadowEffect
+      Distance = 3.000000000000000000
+      Direction = 45.000000000000000000
+      Softness = 0.300000011920929000
+      Opacity = 0.600000023841857900
+      ShadowColor = claBlack
+    end
+  end
+  object CPCargando: TCalloutPanel
+    Align = Client
+    Padding.Top = 11.000000000000000000
+    Opacity = 0.400000005960464500
+    Size.Width = 640.000000000000000000
+    Size.Height = 480.000000000000000000
+    Size.PlatformDefault = False
+    Visible = False
+    TabOrder = 7
+    CalloutWidth = 23.000000000000000000
+    CalloutLength = 11.000000000000000000
+    object AIPpalCargando: TAniIndicator
+      Align = Client
+      Size.Width = 640.000000000000000000
+      Size.Height = 469.000000000000000000
+      Size.PlatformDefault = False
+    end
+  end
+  object MvConfiguracion: TMultiView
+    MasterButton = SpeedButton1
+    Mode = Drawer
+    Size.Width = 250.000000000000000000
+    Size.Height = 610.000000000000000000
+    Size.PlatformDefault = False
+    Visible = False
+    TabOrder = 1
+    object Panel1: TPanel
+      Align = Top
+      Size.Width = 250.000000000000000000
+      Size.Height = 49.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      object Label1: TLabel
+        Align = Client
+        StyledSettings = [FontColor]
+        Size.Width = 250.000000000000000000
+        Size.Height = 49.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Family = 'Arial'
+        TextSettings.Font.Size = 18.000000000000000000
+        TextSettings.Font.StyleExt = {00070000000000000004000000}
+        TextSettings.HorzAlign = Center
+        Text = 'CONFIGURACION'
+        TabOrder = 0
+      end
+    end
+    object Panel2: TPanel
+      Align = Client
+      Size.Width = 250.000000000000000000
+      Size.Height = 561.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 1
+      object Label2: TLabel
+        Position.X = 16.000000000000000000
+        Position.Y = 40.000000000000000000
+        Size.Width = 105.000000000000000000
+        Size.Height = 33.000000000000000000
+        Size.PlatformDefault = False
+        Text = 'IP'
+        TabOrder = 0
+      end
+      object Label3: TLabel
+        Position.X = 16.000000000000000000
+        Position.Y = 81.000000000000000000
+        Size.Width = 105.000000000000000000
+        Size.Height = 33.000000000000000000
+        Size.PlatformDefault = False
+        Text = 'Puerto'
+        TabOrder = 1
+      end
+      object Label4: TLabel
+        Align = Top
+        StyledSettings = [Style, FontColor]
+        Size.Width = 250.000000000000000000
+        Size.Height = 33.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Family = 'Arial'
+        TextSettings.Font.Size = 16.000000000000000000
+        TextSettings.HorzAlign = Center
+        Text = 'SERVIDOR'
+        TabOrder = 3
+      end
+      object EdIP: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        TabOrder = 5
+        Position.X = 128.000000000000000000
+        Position.Y = 40.000000000000000000
+        Size.Width = 105.000000000000000000
+        Size.Height = 33.000000000000000000
+        Size.PlatformDefault = False
+      end
+      object EdPuerto: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        TabOrder = 4
+        Position.X = 128.000000000000000000
+        Position.Y = 81.000000000000000000
+        Size.Width = 105.000000000000000000
+        Size.Height = 33.000000000000000000
+        Size.PlatformDefault = False
+      end
+      object Label5: TLabel
+        StyledSettings = [Style, FontColor]
+        Position.Y = 120.000000000000000000
+        Size.Width = 250.000000000000000000
+        Size.Height = 41.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Family = 'Arial'
+        TextSettings.Font.Size = 16.000000000000000000
+        TextSettings.HorzAlign = Center
+        Text = 'USUARIO SAI'
+        TabOrder = 2
+      end
+      object EdUsuario: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        TabOrder = 6
+        Position.X = 128.000000000000000000
+        Position.Y = 168.000000000000000000
+        Size.Width = 105.000000000000000000
+        Size.Height = 33.000000000000000000
+        Size.PlatformDefault = False
+      end
+      object EdContra: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        TabOrder = 7
+        Position.X = 128.000000000000000000
+        Position.Y = 209.000000000000000000
+        Size.Width = 105.000000000000000000
+        Size.Height = 33.000000000000000000
+        Size.PlatformDefault = False
+      end
+      object Label6: TLabel
+        Position.X = 16.000000000000000000
+        Position.Y = 168.000000000000000000
+        Size.Width = 105.000000000000000000
+        Size.Height = 33.000000000000000000
+        Size.PlatformDefault = False
+        Text = 'Usuario'
+        TabOrder = 8
+      end
+      object Label7: TLabel
+        Position.X = 16.000000000000000000
+        Position.Y = 209.000000000000000000
+        Size.Width = 105.000000000000000000
+        Size.Height = 33.000000000000000000
+        Size.PlatformDefault = False
+        Text = 'Contrase'#241'a'
+        TabOrder = 9
+      end
+      object Conectar: TButton
+        Position.X = 128.000000000000000000
+        Position.Y = 249.000000000000000000
+        Size.Width = 105.000000000000000000
+        Size.Height = 33.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 10
+        Text = 'Conectar'
+        OnClick = ConectarClick
+      end
+      object AAutenticando: TAniIndicator
+        Position.X = 88.000000000000000000
+        Position.Y = 344.000000000000000000
+      end
+    end
+  end
+  object CDAutenticacion: TClientDataSet
+    Aggregates = <>
+    Params = <>
+    Left = 116
+    Top = 173
+    object CDAutenticacionIp: TStringField
+      FieldName = 'Ip'
+    end
+    object CDAutenticacionPuerto: TStringField
+      FieldName = 'Puerto'
+    end
+    object CDAutenticacionUsuario: TStringField
+      FieldName = 'Usuario'
+    end
+    object CDAutenticacionPassword: TStringField
+      FieldName = 'Password'
+    end
+  end
+  object CDSTercero: TClientDataSet
+    Aggregates = <>
+    Params = <
+      item
+        DataType = ftString
+        Name = 'condicion'
+        ParamType = ptInput
+      end>
+    Left = 48
+    Top = 104
+    object CDSTerceroID_N: TStringField
+      FieldName = 'ID_N'
+      Required = True
+      FixedChar = True
+      Size = 30
+    end
+    object CDSTerceroCOMPANY: TStringField
+      FieldName = 'COMPANY'
+      FixedChar = True
+      Size = 35
+    end
+    object CDSTerceroNIT: TStringField
+      FieldName = 'NIT'
+      FixedChar = True
+      Size = 30
+    end
+    object CDSTerceroPHONE1: TStringField
+      FieldName = 'PHONE1'
+      FixedChar = True
+      Size = 16
+    end
+    object CDSTerceroCONTACT1: TStringField
+      FieldName = 'CONTACT1'
+      FixedChar = True
+      Size = 30
+    end
+    object CDSTerceroCITY: TStringField
+      FieldName = 'CITY'
+      FixedChar = True
+      Size = 30
+    end
+    object CDSTerceroDEPARTAMENTO: TStringField
+      FieldName = 'DEPARTAMENTO'
+      FixedChar = True
+      Size = 40
+    end
+    object CDSTerceroPAIS: TStringField
+      FieldName = 'PAIS'
+      FixedChar = True
+      Size = 30
+    end
+    object CDSTerceroADDR1: TStringField
+      FieldName = 'ADDR1'
+      FixedChar = True
+      Size = 35
+    end
+    object CDSTerceroCREDITLMT: TFloatField
+      FieldName = 'CREDITLMT'
+    end
+  end
+  object BindSourceDB1: TBindSourceDB
+    DataSet = CDSTercero
+    ScopeMappings = <>
+    Left = 432
+    Top = 128
+  end
+  object CDSShipto: TClientDataSet
+    PersistDataPacket.Data = {
+      490000009619E0BD01000000180000000200000000000300000049000A535543
+      434C49454E5445040001000000000007434F4D50414E59010049000000010005
+      57494454480200020023000000}
+    Active = True
+    Aggregates = <>
+    Params = <>
+    Left = 272
+    Top = 328
+    object CDSShiptoSUCCLIENTE: TIntegerField
+      FieldName = 'SUCCLIENTE'
+    end
+    object CDSShiptoCOMPANY: TStringField
+      FieldName = 'COMPANY'
+      Size = 35
+    end
+  end
+  object BindSourceDB2: TBindSourceDB
+    DataSet = CDSShipto
+    ScopeMappings = <>
+    Left = 264
+    Top = 144
+  end
+  object BindingsList1: TBindingsList
+    Methods = <>
+    OutputConverters = <>
+    Left = 28
+    Top = 357
+    object LinkListControlToField1: TLinkListControlToField
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB2
+      FieldName = 'COMPANY'
+      Control = CBShipto
+      FillExpressions = <>
+      FillHeaderExpressions = <>
+      FillBreakGroups = <>
+    end
+    object LinkListControlToField2: TLinkListControlToField
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB1
+      FieldName = 'COMPANY'
+      Control = ListView1
+      FillExpressions = <>
+      FillHeaderExpressions = <>
+      FillHeaderFieldName = 'ID_N'
+      FillBreakGroups = <>
+    end
+    object LinkListControlToField3: TLinkListControlToField
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB3
+      FieldName = 'DESCRIPCION'
+      Control = LVItems
+      FillExpressions = <>
+      FillHeaderExpressions = <>
+      FillBreakGroups = <>
+    end
+    object LinkControlToField1: TLinkControlToField
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB4
+      FieldName = 'CANTIDAD'
+      Control = EdCantidad
+      Track = False
+    end
+    object LinkControlToField2: TLinkControlToField
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB4
+      FieldName = 'PRICE'
+      Control = EdvlrUnitario
+      Track = False
+    end
+    object LinkControlToField3: TLinkControlToField
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB4
+      FieldName = 'SUBTOTAL'
+      Control = EdTSIva
+      Track = False
+    end
+    object LinkControlToField4: TLinkControlToField
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB4
+      FieldName = 'RATE'
+      Control = EdTCIva
+      Track = False
+    end
+    object LinkControlToField5: TLinkControlToField
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB4
+      FieldName = 'TOTAL'
+      Control = EdITotal
+      Track = False
+    end
+    object LinkControlToField6: TLinkControlToField
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB4
+      FieldName = 'LOC'
+      Control = EdBodega
+      Track = False
+    end
+    object LinkPropertyToFieldText: TLinkPropertyToField
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB4
+      FieldName = 'DESCRIPCION'
+      Component = Label27
+      ComponentProperty = 'Text'
+    end
+    object LinkFillControlToField: TLinkFillControlToField
+      Category = 'Quick Bindings'
+      Track = False
+      FillDataSource = BindSourceDB4
+      FillDisplayFieldName = 'PRECIO_STR'
+      AutoFill = True
+      FillExpressions = <>
+      FillHeaderExpressions = <>
+      FillBreakGroups = <>
+    end
+    object LinkListControlToField4: TLinkListControlToField
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB4
+      FieldName = 'DESCRIPCION'
+      Control = ListView2
+      FillExpressions = <
+        item
+          SourceMemberName = 'DESCRIPCION'
+          ControlMemberName = 'Text1'
+        end
+        item
+          SourceMemberName = 'PRECIO_STR'
+          ControlMemberName = 'Text2'
+        end
+        item
+          SourceMemberName = 'IVA_STR'
+          ControlMemberName = 'Text3'
+        end
+        item
+          SourceMemberName = 'TOTAL_STR'
+          ControlMemberName = 'Text4'
+        end>
+      FillHeaderExpressions = <>
+      FillBreakGroups = <>
+    end
+  end
+  object CDSItems: TClientDataSet
+    Aggregates = <>
+    Params = <>
+    Left = 528
+    Top = 147
+    object CDSItemsDESCRIPCION: TStringField
+      FieldName = 'DESCRIPCION'
+      Size = 150
+    end
+    object CDSItemsPRICE: TFloatField
+      FieldName = 'PRICE'
+    end
+    object CDSItemsITEM: TStringField
+      FieldName = 'ITEM'
+      Size = 30
+    end
+    object CDSItemsMAN_LOTE: TStringField
+      FieldName = 'MAN_LOTE'
+      Size = 10
+    end
+    object CDSItemsPRICE_SIN_DESC: TFloatField
+      FieldName = 'PRICE_SIN_DESC'
+    end
+    object CDSItemsRATE: TFloatField
+      FieldName = 'RATE'
+    end
+    object CDSItemsCantidad: TStringField
+      FieldName = 'Cantidad'
+      Size = 50
+    end
+  end
+  object BindSourceDB3: TBindSourceDB
+    DataSet = CDSItems
+    ScopeMappings = <>
+    Left = 304
+    Top = 160
+  end
+  object CDSPedidoD: TClientDataSet
+    Aggregates = <>
+    Params = <>
+    AfterPost = CDSPedidoDAfterPost
+    OnCalcFields = CDSPedidoDCalcFields
+    OnNewRecord = CDSPedidoDNewRecord
+    Left = 412
+    Top = 362
+    object CDSPedidoDPOSICION: TIntegerField
+      FieldName = 'POSICION'
+    end
+    object CDSPedidoDLOC: TStringField
+      FieldName = 'LOC'
+      Size = 3
+    end
+    object CDSPedidoDITEM: TStringField
+      FieldName = 'ITEM'
+      Required = True
+      FixedChar = True
+      Size = 30
+    end
+    object CDSPedidoDDESCRIPCION: TStringField
+      FieldName = 'DESCRIPCION'
+      FixedChar = True
+      Size = 80
+    end
+    object CDSPedidoDPRICE: TFloatField
+      FieldName = 'PRICE'
+      DisplayFormat = '$ ###,###,##0.00'
+    end
+    object CDSPedidoDRATE: TFloatField
+      FieldName = 'RATE'
+      DisplayFormat = '$ ###,###,##0.00'
+    end
+    object CDSPedidoDCANTIDAD: TFloatField
+      FieldName = 'CANTIDAD'
+      OnChange = CDSPedidoDCANTIDADChange
+      DisplayFormat = '###,###,##0'
+      EditFormat = '##0'
+    end
+    object CDSPedidoDSUBTOTAL: TFloatField
+      FieldName = 'SUBTOTAL'
+      DisplayFormat = '$ ###,###,##0.00'
+    end
+    object CDSPedidoDTOTAL: TFloatField
+      FieldName = 'TOTAL'
+      DisplayFormat = '$ ###,###,##0.00'
+    end
+    object CDSPedidoDPRECIO_STR: TStringField
+      FieldKind = fkCalculated
+      FieldName = 'PRECIO_STR'
+      Size = 50
+      Calculated = True
+    end
+    object CDSPedidoDSUBTOTAL_STR: TStringField
+      FieldKind = fkCalculated
+      FieldName = 'SUBTOTAL_STR'
+      Size = 50
+      Calculated = True
+    end
+    object CDSPedidoDIVA_STR: TStringField
+      FieldKind = fkCalculated
+      FieldName = 'IVA_STR'
+      Size = 50
+      Calculated = True
+    end
+    object CDSPedidoDTOTAL_STR: TStringField
+      FieldKind = fkCalculated
+      FieldName = 'TOTAL_STR'
+      Size = 50
+      Calculated = True
+    end
+    object CDSPedidoDNOTES: TStringField
+      FieldName = 'NOTES'
+      Size = 100
+    end
+    object CDSPedidoDPRICE_SIN_DESC: TFloatField
+      FieldName = 'PRICE_SIN_DESC'
+    end
+  end
+  object BindSourceDB4: TBindSourceDB
+    DataSet = CDSPedidoD
+    ScopeMappings = <>
+    Left = 376
+    Top = 160
+  end
+end

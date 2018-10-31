@@ -1,0 +1,580 @@
+inherited Main_LgXhdpiPh: TMain_LgXhdpiPh
+  ClientHeight = 695
+  ClientWidth = 450
+  DesignerMasterStyle = 0
+  inherited TCPrincipal: TTabControl
+    Size.Width = 450.000000000000000000
+    Size.Height = 695.000000000000000000
+    TabHeight = 49.000000000000000000
+    TabIndex = 2
+    TabPosition = None
+    Sizes = (
+      450s
+      695s
+      450s
+      695s
+      450s
+      695s
+      450s
+      695s)
+    inherited TICliente: TTabItem
+      Size.Width = 8.000000000000000000
+      Size.Height = 8.000000000000000000
+      ExplicitSize.cx = 57.000000000000000000
+      ExplicitSize.cy = 26.000000000000000000
+      inherited ToolBar1: TToolBar
+        Size.Width = 450.000000000000000000
+        Size.Height = 48.000000000000000000
+        inherited SpeedButton1: TSpeedButton
+          Size.Width = 48.000000000000000000
+          Size.Height = 48.000000000000000000
+        end
+        inherited Label22: TLabel
+          Size.Width = 354.000000000000000000
+          Size.Height = 48.000000000000000000
+          TextSettings.Font.StyleExt = {00090000000000000004000000}
+        end
+        inherited SpeedButton8: TSpeedButton
+          Position.X = 402.000000000000000000
+          Size.Width = 48.000000000000000000
+          Size.Height = 48.000000000000000000
+        end
+      end
+      inherited SBTerceros: TSearchBox
+        Position.Y = 48.000000000000000000
+        Size.Width = 450.000000000000000000
+      end
+      inherited ListView1: TListView
+        Size.Width = 450.000000000000000000
+        Size.Height = 599.000000000000000000
+      end
+    end
+    inherited TIInformacion_Cliente: TTabItem
+      Size.Width = 8.000000000000000000
+      Size.Height = 8.000000000000000000
+      ExplicitSize.cx = 225.000000000000000000
+      ExplicitSize.cy = 49.000000000000000000
+      inherited ToolBar2: TToolBar
+        Size.Width = 450.000000000000000000
+        Size.Height = 48.000000000000000000
+        inherited SpeedButton2: TSpeedButton
+          Size.Width = 48.000000000000000000
+          Size.Height = 48.000000000000000000
+        end
+        inherited SpeedButton3: TSpeedButton
+          Position.X = 402.000000000000000000
+          Size.Width = 48.000000000000000000
+          Size.Height = 48.000000000000000000
+        end
+        inherited Label23: TLabel
+          Size.Width = 354.000000000000000000
+          Size.Height = 48.000000000000000000
+          TextSettings.Font.StyleExt = {00090000000000000004000000}
+        end
+      end
+      inherited Panel3: TPanel
+        Position.Y = 48.000000000000000000
+        Size.Width = 450.000000000000000000
+        inherited EdNit: TEdit
+          Size.Width = 201.000000000000000000
+          Size.Height = 32.000000000000000000
+        end
+        inherited LNombre_Cliente: TLabel
+          Size.Width = 450.000000000000000000
+          TextSettings.Font.StyleExt = {00090000000000000004000000}
+          TextSettings.HorzAlign = Center
+        end
+        inherited CBTelefonos: TComboBox
+          Size.Width = 201.000000000000000000
+          Size.Height = 32.000000000000000000
+        end
+        inherited CBShipto: TComboBox
+          Size.Width = 201.000000000000000000
+          Size.Height = 32.000000000000000000
+        end
+      end
+      inherited pnlTotalCartera: TPanel
+        Position.Y = 647.000000000000000000
+        Size.Width = 450.000000000000000000
+        inherited Layout1: TLayout
+          Size.Width = 450.000000000000000000
+          inherited btDisponible: TButton
+            Size.Width = 450.000000000000000000
+          end
+        end
+        inherited Layout2: TLayout
+          Size.Width = 450.000000000000000000
+          inherited Label9: TLabel
+            Size.Width = 137.000000000000000000
+            TextSettings.Font.StyleExt = {00090000000000000004000000}
+          end
+          inherited LTDisponible: TLabel
+            StyledSettings = [Style, FontColor]
+            Size.Width = 313.000000000000000000
+            TextSettings.Font.Size = 11.000000000000000000
+          end
+        end
+        inherited Layout3: TLayout
+          Size.Width = 450.000000000000000000
+          TabOrder = 3
+          inherited Label14: TLabel
+            Size.Width = 73.000000000000000000
+            TextSettings.Font.StyleExt = {00090000000000000004000000}
+          end
+          inherited LTCupo: TLabel
+            StyledSettings = [FontColor]
+            Position.X = 73.000000000000000000
+            TextSettings.Font.Size = 11.000000000000000000
+          end
+          inherited Label15: TLabel
+            Position.X = 193.000000000000000000
+            Size.Width = 104.000000000000000000
+            TextSettings.Font.StyleExt = {00090000000000000004000000}
+          end
+          inherited LTCartera: TLabel
+            StyledSettings = [Style, FontColor]
+            Size.Width = 153.000000000000000000
+            TextSettings.Font.Size = 11.000000000000000000
+          end
+        end
+      end
+      inherited LVCartera: TListView
+        Size.Width = 450.000000000000000000
+        Size.Height = 462.000000000000000000
+      end
+    end
+    inherited TIPedido: TTabItem
+      IsSelected = True
+      Size.Width = 8.000000000000000000
+      Size.Height = 8.000000000000000000
+      Text = 'Pedidos'
+      ExplicitSize.cx = 150.000000000000000000
+      ExplicitSize.cy = 49.000000000000000000
+      inherited Panel4: TPanel
+        Size.Width = 450.000000000000000000
+        Size.Height = 217.000000000000000000
+        inherited EdNitPedido: TEdit
+          Position.X = 176.000000000000000000
+          Size.Width = 201.000000000000000000
+          Size.Height = 32.000000000000000000
+        end
+        inherited Label13: TLabel
+          Size.Width = 153.000000000000000000
+        end
+        inherited LNombre_ClientePedido: TLabel
+          Size.Width = 450.000000000000000000
+          TextSettings.Font.StyleExt = {00090000000000000004000000}
+          TextSettings.HorzAlign = Center
+        end
+        inherited Label17: TLabel
+          Size.Width = 153.000000000000000000
+        end
+        inherited BtTelefono: TComboBox
+          Position.X = 176.000000000000000000
+          Size.Width = 201.000000000000000000
+          Size.Height = 32.000000000000000000
+        end
+        inherited cbShiptoDetPed: TComboBox
+          Position.X = 176.000000000000000000
+          Size.Width = 201.000000000000000000
+          Size.Height = 32.000000000000000000
+        end
+        inherited Label18: TLabel
+          Size.Width = 153.000000000000000000
+        end
+        inherited Label16: TLabel
+          Position.X = 16.000000000000000000
+          Position.Y = 142.000000000000000000
+          Size.Width = 153.000000000000000000
+        end
+        inherited Label19: TLabel
+          Position.X = 16.000000000000000000
+          Position.Y = 176.000000000000000000
+          Size.Width = 153.000000000000000000
+        end
+        inherited DateEdit1: TDateEdit
+          Position.X = 176.000000000000000000
+          Position.Y = 141.000000000000000000
+          Size.Width = 201.000000000000000000
+          Size.Height = 32.000000000000000000
+        end
+        inherited Edit1: TEdit
+          Position.X = 176.000000000000000000
+          Position.Y = 181.000000000000000000
+          Size.Width = 201.000000000000000000
+          Size.Height = 32.000000000000000000
+        end
+      end
+      inherited ToolBar3: TToolBar
+        Size.Width = 450.000000000000000000
+        inherited SpeedButton5: TSpeedButton
+          OnClick = SpeedButton5Click
+        end
+        inherited SpeedButton6: TSpeedButton
+          Position.X = 402.000000000000000000
+          StyleLookup = 'playtoolbutton'
+        end
+        inherited Label26: TLabel
+          Size.Width = 354.000000000000000000
+          TextSettings.Font.StyleExt = {00090000000000000004000000}
+        end
+      end
+      inherited TAPedido: TTabControl
+        Size.Width = 450.000000000000000000
+        Size.Height = 430.000000000000000000
+        TabHeight = 49.000000000000000000
+        TabIndex = 0
+        TabPosition = None
+        Sizes = (
+          450s
+          430s
+          450s
+          430s)
+        inherited TIDetalleItem: TTabItem
+          IsSelected = True
+          Size.Width = 8.000000000000000000
+          Size.Height = 8.000000000000000000
+          ExplicitSize.cx = 450.000000000000000000
+          ExplicitSize.cy = 49.000000000000000000
+          inherited ListBox1: TListBox
+            Size.Width = 450.000000000000000000
+            Size.Height = 397.000000000000000000
+            Viewport.Width = 450.000000000000000000
+            Viewport.Height = 397.000000000000000000
+            inherited ListBoxItem1: TListBoxItem
+              Size.Width = 450.000000000000000000
+              inherited EdCantidad: TEdit
+                Position.X = 330.000000000000000000
+                Size.Height = 32.000000000000000000
+              end
+            end
+            inherited ListBoxItem2: TListBoxItem
+              Size.Width = 450.000000000000000000
+              inherited EdvlrUnitario: TEdit
+                Position.X = 330.000000000000000000
+                Size.Height = 32.000000000000000000
+              end
+            end
+            inherited ListBoxItem3: TListBoxItem
+              Size.Width = 450.000000000000000000
+              inherited EdTSIva: TEdit
+                Position.X = 330.000000000000000000
+                Size.Height = 32.000000000000000000
+              end
+            end
+            inherited ListBoxItem4: TListBoxItem
+              Size.Width = 450.000000000000000000
+              inherited EdTCIva: TEdit
+                Position.X = 330.000000000000000000
+                Size.Height = 32.000000000000000000
+              end
+            end
+            inherited ListBoxItem5: TListBoxItem
+              Size.Width = 450.000000000000000000
+              inherited EdITotal: TEdit
+                Position.X = 330.000000000000000000
+                Size.Height = 32.000000000000000000
+              end
+            end
+            inherited ListBoxGroupHeader1: TListBoxGroupHeader
+              Size.Width = 450.000000000000000000
+              Size.Height = 30.000000000000000000
+            end
+            inherited ListBoxItem6: TListBoxItem
+              Position.Y = 155.000000000000000000
+              Size.Width = 450.000000000000000000
+              inherited EdIva: TEdit
+                Position.X = 330.000000000000000000
+                Size.Height = 32.000000000000000000
+              end
+            end
+            inherited ListBoxItem7: TListBoxItem
+              Position.Y = 180.000000000000000000
+              Size.Width = 450.000000000000000000
+              inherited EdTotal: TEdit
+                Position.X = 330.000000000000000000
+                Size.Height = 32.000000000000000000
+              end
+            end
+            inherited ListBoxGroupHeader2: TListBoxGroupHeader
+              Position.Y = 205.000000000000000000
+              Size.Width = 450.000000000000000000
+              Size.Height = 30.000000000000000000
+            end
+            inherited ListBoxItem8: TListBoxItem
+              Position.Y = 235.000000000000000000
+              Size.Width = 450.000000000000000000
+              inherited EdBodega: TEdit
+                Position.X = 330.000000000000000000
+                Size.Height = 32.000000000000000000
+              end
+            end
+            inherited Panel6: TPanel
+              Position.Y = 353.000000000000000000
+              Size.Width = 450.000000000000000000
+              inherited SpeedButton9: TSpeedButton
+                Position.X = 402.000000000000000000
+                Size.Width = 48.000000000000000000
+                Size.Height = 48.000000000000000000
+                OnClick = SpeedButton9Click
+              end
+            end
+          end
+          inherited Label27: TLabel
+            Size.Width = 450.000000000000000000
+            TextSettings.Font.StyleExt = {00090000000000000004000000}
+          end
+        end
+        inherited TIPedidoItems: TTabItem
+          IsSelected = False
+          Size.Width = 8.000000000000000000
+          Size.Height = 8.000000000000000000
+          ExplicitSize.cx = 225.000000000000000000
+          ExplicitSize.cy = 15.000000000000000000
+          inherited Panel5: TPanel
+            Position.Y = 386.000000000000000000
+            Size.Width = 450.000000000000000000
+            inherited Label20: TLabel
+              TextSettings.Font.StyleExt = {00090000000000000004000000}
+            end
+            inherited SpeedButton4: TSpeedButton
+              Position.X = 402.000000000000000000
+              Size.Width = 48.000000000000000000
+              Size.Height = 48.000000000000000000
+            end
+            inherited LbTotalPedido: TLabel
+              Size.Width = 305.000000000000000000
+            end
+          end
+          inherited ListView2: TListView
+            Size.Width = 450.000000000000000000
+            Size.Height = 386.000000000000000000
+            ItemAppearanceObjects.ItemObjects.ObjectsCollection = <
+              item
+                AppearanceObjectName = 'Text1'
+                AppearanceClassName = 'TTextObjectAppearance'
+                Appearance.TextAlign = Leading
+                Appearance.TextVertAlign = Leading
+                Appearance.Width = 380.000000000000000000
+                Appearance.Height = 25.000000000000000000
+              end
+              item
+                AppearanceObjectName = 'Text2'
+                AppearanceClassName = 'TTextObjectAppearance'
+                Appearance.TextAlign = Leading
+                Appearance.TextVertAlign = Leading
+                Appearance.Width = 380.000000000000000000
+                Appearance.Height = 25.000000000000000000
+                Appearance.PlaceOffset.Y = 24.000000000000000000
+              end
+              item
+                AppearanceObjectName = 'Text3'
+                AppearanceClassName = 'TTextObjectAppearance'
+                Appearance.TextAlign = Leading
+                Appearance.TextVertAlign = Leading
+                Appearance.Width = 380.000000000000000000
+                Appearance.Height = 25.000000000000000000
+                Appearance.PlaceOffset.Y = 48.000000000000000000
+              end
+              item
+                AppearanceObjectName = 'Text4'
+                AppearanceClassName = 'TTextObjectAppearance'
+                Appearance.TextAlign = Leading
+                Appearance.TextVertAlign = Leading
+                Appearance.Width = 380.000000000000000000
+                Appearance.Height = 25.000000000000000000
+                Appearance.PlaceOffset.Y = 72.000000000000000000
+              end
+              item
+                AppearanceObjectName = 'Accessory5'
+                AppearanceClassName = 'TAccessoryObjectAppearance'
+                Appearance.Width = 30.000000000000000000
+                Appearance.Height = 100.000000000000000000
+                Appearance.Align = Trailing
+              end>
+            ItemAppearanceObjects.ItemEditObjects.ObjectsCollection = <
+              item
+                AppearanceObjectName = 'Text1'
+                AppearanceClassName = 'TTextObjectAppearance'
+              end
+              item
+                AppearanceObjectName = 'Text2'
+                AppearanceClassName = 'TTextObjectAppearance'
+              end
+              item
+                AppearanceObjectName = 'Text3'
+                AppearanceClassName = 'TTextObjectAppearance'
+              end
+              item
+                AppearanceObjectName = 'Text4'
+                AppearanceClassName = 'TTextObjectAppearance'
+              end
+              item
+                AppearanceObjectName = 'Accessory5'
+                AppearanceClassName = 'TAccessoryObjectAppearance'
+              end>
+          end
+        end
+      end
+    end
+    inherited TIBucar_Item: TTabItem
+      IsSelected = False
+      Size.Width = 8.000000000000000000
+      Size.Height = 8.000000000000000000
+      ExplicitSize.cx = 114.000000000000000000
+      ExplicitSize.cy = 49.000000000000000000
+      inherited ToolBar4: TToolBar
+        Size.Width = 450.000000000000000000
+        Size.Height = 48.000000000000000000
+        inherited SpeedButton7: TSpeedButton
+          Size.Width = 48.000000000000000000
+          Size.Height = 48.000000000000000000
+        end
+        inherited Label24: TLabel
+          Size.Width = 402.000000000000000000
+          Size.Height = 48.000000000000000000
+          TextSettings.Font.StyleExt = {00090000000000000004000000}
+        end
+      end
+      inherited TCBusquedaItems: TTabControl
+        Size.Width = 450.000000000000000000
+        Size.Height = 647.000000000000000000
+        Sizes = (
+          450s
+          598s
+          450s
+          598s)
+        inherited TIBusquedaItems: TTabItem
+          Size.Width = 225.000000000000000000
+          ExplicitSize.cx = 193.000000000000000000
+          ExplicitSize.cy = 49.000000000000000000
+          inherited SBItems: TSearchBox
+            Size.Width = 450.000000000000000000
+          end
+          inherited LVItems: TListView
+            ItemAppearanceClassName = 'TListItemAppearance'
+            Size.Width = 450.000000000000000000
+            Size.Height = 550.000000000000000000
+          end
+        end
+        inherited TIDisponibilidadItem: TTabItem
+          Size.Width = 225.000000000000000000
+          ExplicitSize.cx = 192.000000000000000000
+          ExplicitSize.cy = 49.000000000000000000
+          inherited LVDisponibilidadItem: TListView
+            Size.Width = 450.000000000000000000
+            Size.Height = 541.000000000000000000
+            inherited lblNoExistencias: TLabel
+              Position.Y = 259.000000000000000000
+              Size.Width = 450.000000000000000000
+            end
+          end
+          inherited lblItemSeleccionado: TLabel
+            Size.Width = 450.000000000000000000
+            Size.Height = 57.000000000000000000
+            TextSettings.Font.StyleExt = {00070000000000000004000000}
+          end
+        end
+      end
+    end
+  end
+  inherited CPGeneral: TCalloutPanel
+    Padding.Top = 11.000000000000000000
+    Position.X = 72.000000000000000000
+    Position.Y = 169.000000000000000000
+    Size.Width = 281.000000000000000000
+    Size.Height = 120.000000000000000000
+    CalloutPosition = Top
+    inherited FAGeneral: TFloatAnimation
+      Duration = 1.000000000000000000
+    end
+    inherited LGMensaje: TLabel
+      Size.Width = 281.000000000000000000
+      Size.Height = 109.000000000000000000
+      TextSettings.Font.StyleExt = {00070000000000000004000000}
+    end
+  end
+  inherited MvConfiguracion: TMultiView
+    Size.Height = 695.000000000000000000
+    inherited Panel1: TPanel
+      inherited Label1: TLabel
+        TextSettings.Font.StyleExt = {00070000000000000004000000}
+      end
+    end
+    inherited Panel2: TPanel
+      Size.Height = 646.000000000000000000
+      inherited Label2: TLabel
+        Position.X = 8.000000000000000000
+        Size.Width = 97.000000000000000000
+      end
+      inherited Label3: TLabel
+        Position.X = 8.000000000000000000
+        Size.Width = 97.000000000000000000
+      end
+      inherited EdIP: TEdit
+        Position.X = 104.000000000000000000
+        Size.Width = 131.000000000000000000
+        Size.Height = 32.000000000000000000
+      end
+      inherited EdPuerto: TEdit
+        Position.X = 104.000000000000000000
+        Size.Width = 131.000000000000000000
+        Size.Height = 32.000000000000000000
+      end
+      inherited EdUsuario: TEdit
+        Position.X = 104.000000000000000000
+        Size.Width = 131.000000000000000000
+        Size.Height = 32.000000000000000000
+      end
+      inherited EdContra: TEdit
+        Position.X = 104.000000000000000000
+        Size.Width = 131.000000000000000000
+        Size.Height = 32.000000000000000000
+      end
+      inherited Label6: TLabel
+        Position.X = 8.000000000000000000
+        Size.Width = 97.000000000000000000
+      end
+      inherited Label7: TLabel
+        Position.X = 8.000000000000000000
+        Size.Width = 97.000000000000000000
+      end
+      inherited Conectar: TButton
+        Position.X = 96.000000000000000000
+        Size.Width = 137.000000000000000000
+        Size.Height = 48.000000000000000000
+      end
+      inherited AAutenticando: TAniIndicator
+        Visible = False
+      end
+    end
+  end
+  inherited CDAutenticacion: TClientDataSet
+    Left = 156
+    Top = 341
+  end
+  inherited CDSTercero: TClientDataSet
+    Left = 72
+    Top = 312
+  end
+  inherited BindSourceDB1: TBindSourceDB
+    Left = 40
+    Top = 360
+  end
+  inherited CDSShipto: TClientDataSet
+    Left = 280
+    Top = 376
+  end
+  inherited BindSourceDB2: TBindSourceDB
+    Left = 248
+    Top = 320
+  end
+  inherited BindingsList1: TBindingsList
+    Left = 84
+    Top = 349
+  end
+  inherited BindSourceDB3: TBindSourceDB
+    Left = 352
+    Top = 352
+  end
+end
