@@ -16,7 +16,12 @@ uses
   FMX.ListView.Adapters.Base,
   FMX.ListView, Data.Bind.EngExt, FMX.Bind.DBEngExt, System.Rtti,
   System.Bindings.Outputs, FMX.Bind.Editors, Data.Bind.DBScope, FMX.ListBox,
-  FMX.Maps, FMX.Layouts, FMX.DateTimeCtrls, FMX.DialogService;
+  FMX.Maps, FMX.Layouts, FMX.DateTimeCtrls, FMX.DialogService, FMX.ScrollBox,
+  REST.Client,
+  FMX.Memo;
+
+type
+  TTipoNota = (tnEnc, tnDetalle);
 
 type
   TMain = class(TForm)
@@ -110,8 +115,8 @@ type
     Label18: TLabel;
     Label16: TLabel;
     Label19: TLabel;
-    DateEdit1: TDateEdit;
-    Edit1: TEdit;
+    deFechaEntrega: TDateEdit;
+    EDOrdenCompra: TEdit;
     Panel5: TPanel;
     Label20: TLabel;
     SpeedButton4: TSpeedButton;
@@ -197,6 +202,23 @@ type
     LinkFillControlToField: TLinkFillControlToField;
     ListView2: TListView;
     LinkListControlToField4: TLinkListControlToField;
+    SpeedButton10: TSpeedButton;
+    TINotas: TTabItem;
+    ToolBar5: TToolBar;
+    SpeedButton11: TSpeedButton;
+    SpeedButton12: TSpeedButton;
+    Label21: TLabel;
+    Memo1: TMemo;
+    SpeedButton13: TSpeedButton;
+    LinkListControlToField5: TLinkListControlToField;
+    TIBuscar_Pedido: TTabItem;
+    ToolBar6: TToolBar;
+    SpeedButton14: TSpeedButton;
+    Label25: TLabel;
+    Label28: TLabel;
+    SpeedButton15: TSpeedButton;
+    LVPediPendientes: TListView;
+
     procedure ConectarClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure FAGeneralFinish(Sender: TObject);
@@ -227,6 +249,15 @@ type
     procedure SpeedButton9Click(Sender: TObject);
     procedure ListView2ItemClick(const Sender: TObject;
       const AItem: TListViewItem);
+    procedure SpeedButton8Click(Sender: TObject);
+    procedure SpeedButton11Click(Sender: TObject);
+    procedure SpeedButton10Click(Sender: TObject);
+    procedure SpeedButton12Click(Sender: TObject);
+    procedure SpeedButton13Click(Sender: TObject);
+    procedure SpeedButton15Click(Sender: TObject);
+    procedure SpeedButton14Click(Sender: TObject);
+    procedure LVPediPendientesItemClick(const Sender: TObject;
+      const AItem: TListViewItem);
   private
     { Private declarations }
   public
@@ -243,6 +274,8 @@ type
       pCantidad: Double; pFechaLote: TDate);
     procedure CancelarTasks;
     procedure CalcularTotales; overload;
+    procedure CalcularTotales(var pPedido: TPedido); overload;
+    procedure CreaPedidoList(pBusPedido: TBusPedido);
 
   const
     cFormatoPesos = '$ ###,###,###';
@@ -265,7 +298,12 @@ type
     vAltolyDisponibilidad: Double;
     vListaItem: TObjectList<TItem>;
     vTasks: TArray<ITask>;
+    vListaBPedido: TObjectList<TBusPedido>;
     OnEventoErrorConexion: TNotifyEvent;
+    vCurrentPedido: Integer;
+    vCurrentComment: String;
+    vCurrentTipoNota: TTipoNota;
+    VConsulta: String;
   end;
 
 var
@@ -276,7 +314,6 @@ implementation
 {$R *.fmx}
 {$R *.LgXhdpiPh.fmx ANDROID}
 {$R *.Windows.fmx MSWINDOWS}
-
 { TForm1 }
 
 procedure TMain.btDisponibleClick(Sender: TObject);
@@ -376,6 +413,42 @@ begin
   end;
 end;
 
+procedure TMain.CalcularTotales(var pPedido: TPedido);
+var
+  vBookMark: TBookMark;
+  vTotal, vIVA: Extended;
+  vTotalDCT: Extended;
+begin
+  vBookMark := CDSPedidoD.GetBookmark;
+  // CDSPedidoD.DisableControls;
+  try
+    vTotal := 0;
+    vIVA := 0;
+    vTotalDCT := 0;
+    CDSPedidoD.First;
+    while not CDSPedidoD.Eof do
+    begin
+      vTotal := vTotal + CDSPedidoDTOTAL.AsFloat;
+      vIVA := vIVA + ((CDSPedidoDPRICE.AsFloat * CDSPedidoDCANTIDAD.AsFloat) *
+        (CDSPedidoDRATE.AsFloat / 100));
+      vTotalDCT := vTotalDCT +
+        ((CDSPedidoDCANTIDAD.AsFloat * CDSPedidoDPRICE_SIN_DESC.AsFloat) -
+        (CDSPedidoDPRICE.AsFloat * CDSPedidoDCANTIDAD.AsFloat));
+      CDSPedidoD.Next;
+    end;
+
+    pPedido.TOTAL := vTotal;
+    pPedido.SALESTAX := vIVA;
+    pPedido.SUBTOTAL := pPedido.TOTAL - pPedido.SALESTAX;
+    pPedido.DESTOTAL := vTotalDCT;
+    pPedido.TOTALPEDIDO := pPedido.SUBTOTAL + pPedido.DESTOTAL;
+  finally
+    CDSPedidoD.GotoBookmark(vBookMark);
+    CDSPedidoD.FreeBookmark(vBookMark);
+    // CDSPedidoD.EnableControls;
+  end;
+end;
+
 procedure TMain.CancelarTasks;
 var
   vTask: ITask;
@@ -395,11 +468,14 @@ end;
 
 procedure TMain.CDSPedidoDCalcFields(DataSet: TDataSet);
 begin
-CDSPedidoDPRECIO_STR.AsString := 'Cantidad: ' + FormatFloat(cFormatoNumerico, CDSPedidoDCANTIDAD.AsFloat) +
-    ' - Precio: ' + FormatFloat(cFormatoPesos, CDSPedidoDPRICE.AsFloat);
-  CDSPedidoDIVA_STR.AsString := 'SubTotal: ' + FormatFloat(cFormatoPesos, CDSPedidoDSUBTOTAL.AsFloat) + ' - Iva: ' +
-    FormatFloat(cFormatoPorcentaje, CDSPedidoDRATE.AsFloat);
-  CDSPedidoDTOTAL_STR.AsString := 'Total: ' + FormatFloat(cFormatoPesos, CDSPedidoDTOTAL.AsFloat);
+  CDSPedidoDPRECIO_STR.AsString := 'Cantidad: ' + FormatFloat(cFormatoNumerico,
+    CDSPedidoDCANTIDAD.AsFloat) + ' - Precio: ' + FormatFloat(cFormatoPesos,
+    CDSPedidoDPRICE.AsFloat);
+  CDSPedidoDIVA_STR.AsString := 'SubTotal: ' + FormatFloat(cFormatoPesos,
+    CDSPedidoDSUBTOTAL.AsFloat) + ' - Iva: ' + FormatFloat(cFormatoPorcentaje,
+    CDSPedidoDRATE.AsFloat);
+  CDSPedidoDTOTAL_STR.AsString := 'Total: ' + FormatFloat(cFormatoPesos,
+    CDSPedidoDTOTAL.AsFloat);
 end;
 
 procedure TMain.CDSPedidoDCANTIDADChange(Sender: TField);
@@ -414,7 +490,7 @@ end;
 
 procedure TMain.CDSPedidoDNewRecord(DataSet: TDataSet);
 begin
-CDSPedidoDPOSICION.AsInteger := CDSPedidoD.RecordCount + 1;
+  CDSPedidoDPOSICION.AsInteger := CDSPedidoD.RecordCount + 1;
 end;
 
 procedure TMain.ConectarClick(Sender: TObject);
@@ -521,6 +597,23 @@ begin
     FormatFloat('###,###,##0', pCantidad);
 end;
 
+procedure TMain.CreaPedidoList(pBusPedido: TBusPedido);
+var
+  vPedido: TListViewItem;
+begin
+  vPedido := LVPediPendientes.Items.Add;
+  vPedido.CreateObjects;
+  vPedido.TagObject := pBusPedido;
+  TListItemText(vPedido.View.FindDrawable('Num')).Text := 'Numero: ' +
+    pBusPedido.NUMBER.ToString;
+  TListItemText(vPedido.View.FindDrawable('Fecha')).Text := 'Fecha: ' +
+    DateToStr(pBusPedido.FECHA);
+  TListItemText(vPedido.View.FindDrawable('Total')).Text := 'Total: ' +
+    FormatFloat('###,###,##0.00', pBusPedido.TOTAL);
+  TListItemText(vPedido.View.FindDrawable('Auto')).Text := 'Autorizado: ' +
+    pBusPedido.AUTORIZADO;
+end;
+
 procedure TMain.EstablecerMensaje(Msj: String; Color: TAlphaColor);
 begin
   if Msj = MSG_ReviseConexionInternet then
@@ -580,9 +673,7 @@ begin
   CDSPedidoD.Open;
   TCPrincipal.ActiveTab := TICliente;
   SBTerceros.SetFocus;
-
-
-
+  vlMonitor := TObject.Create;
   vRutaDocumentos := IncludeTrailingPathDelimiter
     (System.IOUtils.TPath.GetDocumentsPath);
 
@@ -683,13 +774,13 @@ begin
 end;
 
 procedure TMain.ListView2ItemClick(const Sender: TObject;
-  const AItem: TListViewItem);
+const AItem: TListViewItem);
 begin
- CDSPedidoD.Locate('POSICION', TControl(Sender).Tag, []);
+  CDSPedidoD.Locate('POSICION', TControl(Sender).Tag, []);
   CDSPedidoD.Edit;
   TAPedido.ActiveTab := TIDetalleItem;
-  edCantidad.SetFocus;
-  edCantidad.SelectAll;
+  EdCantidad.SetFocus;
+  EdCantidad.SelectAll;
 end;
 
 procedure TMain.LVDisponibilidadItemItemClick(const Sender: TObject;
@@ -699,7 +790,6 @@ var
 begin
   vItem := TItem(AItem.TagObject);
 
-  // *** Acá va el llenado del registro seleccionado...
   if CDSPedidoD.Locate('ITEM', Trim(CDSItemsITEM.AsString), []) then
     CDSPedidoD.Edit
   else
@@ -717,7 +807,6 @@ begin
     ((CDSPedidoDPRICE.AsFloat * CDSPedidoDCANTIDAD.AsFloat) *
     (CDSPedidoDRATE.AsFloat / 100));
   CDSPedidoDDESCRIPCION.AsString := CDSItemsDESCRIPCION.AsString;
-
 
   TCPrincipal.ActiveTab := TIPedido;
   TAPedido.ActiveTab := TIDetalleItem;
@@ -852,6 +941,73 @@ begin
 
 end;
 
+procedure TMain.LVPediPendientesItemClick(const Sender: TObject;
+const AItem: TListViewItem);
+var
+  vTask: ITask;
+  vItem: TBusPedido;
+  vPedido: TPedido;
+  vPedidoDet: TPedidoDet;
+  vUM: TJSONUnMarshal;
+begin
+  vItem := vListaBPedido.Items[AItem.Index];
+
+  if vItem.AUTORIZADO = 'True' then
+    EstablecerMensaje(MSG_PEDIDO_AUTORIZADO)
+  else
+  begin
+    TAPedido.ActiveTab := TIPedidoItems;
+    TCPrincipal.ActiveTab := TIPedido;
+
+    vUM := TJSONUnMarshal.Create;
+
+    vPedido :=
+      TPedido(vUM.Unmarshal(TJSONArray(TRESTPeticion.GetContent(['TraerPedido',
+      '1', '1', 'PPM', vItem.NUMBER.ToString])).Items[0]));
+
+    deFechaEntrega.Date := vPedido.FECHA_ENTREGA;
+    EDOrdenCompra.Text := vPedido.OCNUMERO;
+
+    // Determina de manera global cual es el pedido seleccionado
+    vCurrentComment := vPedido.COMMENTS;
+    vCurrentPedido := vPedido.NUMBER;
+    Label26.Text := 'Pedido - ' + vCurrentPedido.ToString;
+    CDSPedidoD.EmptyDataSet;
+    // CDSPedidoD.DisableControls;
+    try
+      CDSPedidoD.Close;
+      CDSPedidoD.CreateDataSet;
+
+      CDSPedidoD.Open;
+
+      for vPedidoDet in vPedido.PedidoDet do
+      begin
+        CDSPedidoD.Append;
+        CDSPedidoDITEM.AsString := vPedidoDet.ITEM;
+        CDSPedidoDDESCRIPCION.AsString := vPedidoDet.ITEM_DESC;
+        // CDSPedidoDSUBTOTAL.AsFloat := vPedidoDet.PRECIO_VENDEDOR;
+        CDSPedidoDRATE.AsFloat := vPedidoDet.PORC_IVA;
+
+        if vPedidoDet.QTYORDER <> 0 then
+          CDSPedidoDPRICE.AsFloat := (vPedidoDet.EXTEND / vPedidoDet.QTYORDER);
+
+        CDSPedidoDPRICE_SIN_DESC.AsFloat := vPedidoDet.PRICE;
+        CDSPedidoDSUBTOTAL.AsFloat := vPedidoDet.EXTEND;
+        CDSPedidoDCANTIDAD.AsFloat := vPedidoDet.QTYORDER;
+
+        CDSPedidoDTOTAL.AsFloat := (vPedidoDet.EXTEND + vPedidoDet.VLR_IVA);
+
+        CDSPedidoDLOC.AsString := vPedidoDet.LOCATION;
+        CDSPedidoDNOTES.AsString := vPedidoDet.NOTES;
+        CDSPedidoD.Post;
+      end;
+    finally
+      // CDSPedidoD.EnableControls;
+    end;
+
+  end;
+end;
+
 procedure TMain.PutCantidadItem(pValue: TListViewItem);
 begin
   SetLength(vTasks, Length(vTasks) + 1);
@@ -888,9 +1044,10 @@ end;
 procedure TMain.SBItemsKeyDown(Sender: TObject; var Key: Word;
 var KeyChar: Char; Shift: TShiftState);
 var
-  vItem: TItem;
+
   vUM: TJSONUnMarshal;
   vListViewITEMS: TListViewItem;
+  vTask: ITask;
 begin
   if Key = 13 then
   begin
@@ -898,43 +1055,51 @@ begin
     begin
       if ((Length(Trim(SBItems.Text)) >= 3)) then
       begin
-        vUM := TJSONUnMarshal.Create;
-        vListaItem := TObjectList<TItem>.Create;
 
-        try
-
-          vListaItem := TObjectList<TItem>
-            (vUM.Unmarshal(TJSONArray(TRESTPeticion.GetContent(['TraeListaItem',
-            DMGeneral.vgUsuario, DMGeneral.vgCliente, ReplaceStr(SBItems.Text,
-            ' ', '%')],
-            procedure(vMensaje: String)
-            begin
-              FMX.DialogService.TDialogService.ShowMessage(vMensaje);
-            end)).Items[0]));
-
-          CDSItems.EmptyDataSet;
-          CDSItems.Close;
-          CDSItems.Open;
-          for vItem in vListaItem do
+        ValidaYEjecuta(
+          procedure
+          VAR
+            vItem: TItem;
           begin
-            CDSItems.Append;
-            CDSItemsITEM.AsString := vItem.ITEM;
-            CDSItemsDESCRIPCION.AsString := vItem.ITEM + '   ' +
-              vItem.DESCRIPCION;
-            CDSItemsPRICE.AsFloat := vItem.PRICE;
-            CDSItemsPRICE_SIN_DESC.AsFloat := vItem.PRICE_SIN_DESC;
-            CDSItemsRATE.AsFloat := vItem.RATE;
-            CDSItemsMAN_LOTE.AsString := vItem.MAN_LOTE;
-            CDSItemsCantidad.AsString := 'Cantidad: ' +
-              FormatFloat('###,###,##0',
-              TJSONArray(TRESTPeticion.GetContent(['DisponibilidadTotal',
-              vItem.ITEM])).Items[0].Value.ToDouble);;
-            CDSItems.Post;
-          end;
-          CDSItems.First;
-        finally
-          vListaItem.DisposeOf;
-        end;
+            try
+              vUM := TJSONUnMarshal.Create;
+              vListaItem := TObjectList<TItem>.Create;
+
+              vListaItem := TObjectList<TItem>
+                (vUM.Unmarshal(TJSONArray(TRESTPeticion.GetContent
+                (['TraeListaItem', DMGeneral.vgUsuario, DMGeneral.vgCliente,
+                ReplaceStr(SBItems.Text, ' ', '%')],
+                procedure(vMensaje: String)
+                begin
+                  FMX.DialogService.TDialogService.ShowMessage(vMensaje);
+                end)).Items[0]));
+
+              CDSItems.EmptyDataSet;
+              CDSItems.Close;
+              CDSItems.Open;
+              for vItem in vListaItem do
+              begin
+                CDSItems.Append;
+                CDSItemsITEM.AsString := vItem.ITEM;
+                CDSItemsDESCRIPCION.AsString := vItem.ITEM + '   ' +
+                  vItem.DESCRIPCION;
+                CDSItemsPRICE.AsFloat := vItem.PRICE;
+                CDSItemsPRICE_SIN_DESC.AsFloat := vItem.PRICE_SIN_DESC;
+                CDSItemsRATE.AsFloat := vItem.RATE;
+                CDSItemsMAN_LOTE.AsString := vItem.MAN_LOTE;
+                CDSItemsCantidad.AsString := 'Cantidad: ' +
+                  FormatFloat('###,###,##0',
+                  TJSONArray(TRESTPeticion.GetContent(['DisponibilidadTotal',
+                  vItem.ITEM])).Items[0].Value.ToDouble);
+                CDSItems.Post;
+              end;
+              CDSItems.First;
+            finally
+              // vListaItem.DisposeOf;
+
+            end;
+          end, vTask);
+
       end;
     end;
   end;
@@ -949,9 +1114,10 @@ var
   vListaTer: TObjectList<TTercero>;
   vTercero: TTercero;
 begin
+
   if TCPrincipal.ActiveTab = TICliente then
   begin
-    if (Length(Trim(SBTerceros.Text)) >= 3) then
+    if (Length(Trim(SBTerceros.Text)) >= 1) then
     begin
       if not vValidacionCorrecta then
       begin
@@ -959,6 +1125,10 @@ begin
       end
       else
       begin
+        CPCargando.Visible := True;
+        AIPpalCargando.Visible := True;
+        AIPpalCargando.Enabled := True;
+
         ListView1.Items.Clear;
         CPCargando.Visible := True;
         AIPpalCargando.Enabled := True;
@@ -996,33 +1166,112 @@ begin
         lblNohayTerceros.Visible := (CDSTercero.RecordCount = 0);
         AIPpalCargando.Enabled := False;
         CPCargando.Visible := False;
+        AIPpalCargando.Visible := False;
+        AIPpalCargando.Enabled := False;
+
       end;
 
     end;
   end;
 end;
 
+procedure TMain.SpeedButton10Click(Sender: TObject);
+begin
+  vCurrentTipoNota := tnDetalle;
+  Memo1.Lines.Text := CDSPedidoDNOTES.AsString;
+  TCPrincipal.ActiveTab := TINotas;
+  Memo1.SetFocus;
+end;
+
+procedure TMain.SpeedButton11Click(Sender: TObject);
+begin
+  TCPrincipal.ActiveTab := TIPedido;
+end;
+
+procedure TMain.SpeedButton12Click(Sender: TObject);
+begin
+  if vCurrentTipoNota = tnEnc then
+    vCurrentComment := Memo1.Lines.Text
+  else
+  begin
+    CDSPedidoD.Edit;
+    CDSPedidoDNOTES.AsString := Memo1.Lines.Text;
+    CDSPedidoD.Post;
+  end;
+
+  TCPrincipal.ActiveTab := TIPedido;
+end;
+
+procedure TMain.SpeedButton13Click(Sender: TObject);
+begin
+  vCurrentTipoNota := tnEnc;
+  Memo1.Lines.Text := vCurrentComment;
+  TCPrincipal.ActiveTab := TINotas;
+  Memo1.SetFocus;
+end;
+
+procedure TMain.SpeedButton14Click(Sender: TObject);
+begin
+  TCPrincipal.ActiveTab := TIInformacion_Cliente;
+end;
+
+procedure TMain.SpeedButton15Click(Sender: TObject);
+var
+  vUM: TJSONUnMarshal;
+  vPedido: TBusPedido;
+begin
+
+  TCPrincipal.ActiveTab := TIBuscar_Pedido;
+
+  vUM := TJSONUnMarshal.Create;
+  vListaBPedido := TObjectList<TBusPedido>.Create;
+
+  try
+    if Assigned(vListaBPedido) then
+      vListaBPedido.DisposeOf;
+
+    vListaBPedido := TObjectList<TBusPedido>
+      (vUM.Unmarshal(TJSONArray(TRESTPeticion.GetContent(['TraeListaPedidos',
+      DMGeneral.vgCliente])).Items[0]));
+
+    LVPediPendientes.BeginUpdate;
+    LVPediPendientes.Items.Clear;
+    for vPedido in vListaBPedido do
+      CreaPedidoList(vPedido);
+  finally
+    LVPediPendientes.EndUpdate;
+  end;
+
+  LVPediPendientes.OnItemClick := LVPediPendientesItemClick;
+end;
+
 procedure TMain.SpeedButton2Click(Sender: TObject);
 begin
- 
+
   TCPrincipal.ActiveTab := TICliente;
 end;
 
 procedure TMain.SpeedButton3Click(Sender: TObject);
 begin
-  
+  deFechaEntrega.DateTime := Date;
+  vCurrentPedido := 0;
   TCPrincipal.ActiveTab := TIPedido;
   TAPedido.ActiveTab := TIPedidoItems;
+  CDSPedidoD.EmptyDataSet;
+  EDOrdenCompra.Text := EmptyStr;
+  vCurrentComment := EmptyStr;
+  Label26.Text := 'Pedido Nuevo';
 end;
 
 procedure TMain.SpeedButton4Click(Sender: TObject);
 begin
-  
+  LVDisponibilidadItem.OnItemClick := LVDisponibilidadItemItemClick;
   TCPrincipal.ActiveTab := TIBucar_Item;
   TCBusquedaItems.ActiveTab := TIBusquedaItems;
   SBItems.SetFocus;
   LVItems.Items.Clear;
-  SBItems.Text :='';
+  SBItems.Text := '';
+  VConsulta := 'Pedido';
 end;
 
 procedure TMain.SpeedButton5Click(Sender: TObject);
@@ -1032,6 +1281,14 @@ begin
 end;
 
 procedure TMain.SpeedButton6Click(Sender: TObject);
+var
+  vPedido: TPedido;
+  vPedidoDet: TPedidoDet;
+  vNumPedido: Integer;
+  vTask: ITask;
+  vM: TJSONMarshal;
+  vParam: TRESTRequestParameter;
+  vListaParams: TRESTRequestParameterList;
 begin
   if TAPedido.ActiveTab = TIDetalleItem then
   begin
@@ -1041,19 +1298,105 @@ begin
     except
     end;
     TAPedido.ActiveTab := TIPedidoItems;
+  end
+  else if TAPedido.ActiveTab = TIPedidoItems then
+  begin
+    if CDSPedidoD.RecordCount > 0 then
+    begin
+      vPedido := TPedido.Create;
+      try
+        vPedido.NUMBER := vCurrentPedido;
+        vPedido.ID_USUARIO := CDAutenticacionUsuario.AsString;
+        vPedido.ID_N := CDSTerceroID_N.AsString;
+        vPedido.SUCCLIENTE := CDSShiptoSUCCLIENTE.AsInteger;
+        vPedido.FECHA_ENTREGA := deFechaEntrega.Date;
+        vPedido.OCNUMERO := Trim(EDOrdenCompra.Text);
+        vPedido.COMMENTS := Trim(vCurrentComment);
+        vPedido.ID_USUARIO_FACTURACION := CDAutenticacionUsuario.AsString;
+
+        CalcularTotales(vPedido);
+
+        CDSPedidoD.First;
+        while not CDSPedidoD.Eof do
+        begin
+          vPedidoDet := TPedidoDet.Create(vPedido);
+          vPedidoDet.ITEM := CDSPedidoDITEM.AsString;
+          vPedidoDet.PRECIO_VENDEDOR := CDSPedidoDSUBTOTAL.AsFloat;
+          vPedidoDet.PORC_IVA := CDSPedidoDRATE.AsFloat;
+          vPedidoDet.VLR_IVA :=
+            (CDSPedidoDTOTAL.AsFloat - CDSPedidoDSUBTOTAL.AsFloat);
+          vPedidoDet.PRECIOIVA := CDSPedidoDPRICE_SIN_DESC.AsFloat *
+            ((CDSPedidoDRATE.AsFloat / 100) + 1);
+          vPedidoDet.PRICE := CDSPedidoDPRICE_SIN_DESC.AsFloat;
+
+          vPedidoDet.EXTENDED :=
+            (CDSPedidoDPRICE.AsFloat * CDSPedidoDCANTIDAD.AsFloat);
+          vPedidoDet.TOTALDCT :=
+            ((CDSPedidoDCANTIDAD.AsFloat * CDSPedidoDPRICE_SIN_DESC.AsFloat) -
+            (CDSPedidoDPRICE.AsFloat * CDSPedidoDCANTIDAD.AsFloat));
+
+          vPedidoDet.QTYSHIP := CDSPedidoDCANTIDAD.AsFloat;
+          vPedidoDet.QTYORDER := vPedidoDet.QTYSHIP;
+          vPedidoDet.LOCATION := CDSPedidoDLOC.AsString;
+          vPedidoDet.NOTES := CDSPedidoDNOTES.AsString;
+          vPedido.AgregaPedidoDet(vPedidoDet);
+
+          CDSPedidoD.Next;
+        end;
+
+        TCPrincipal.ActiveTab := TIInformacion_Cliente;
+        EDOrdenCompra.Text := EmptyStr;
+
+        vM := TJSONMarshal.Create(TJSONConverter.Create);
+
+        vListaParams := TRESTRequestParameterList.Create(nil);
+        vParam := vListaParams.AddItem;
+        vParam.Value := vM.Marshal(vPedido).ToString;
+
+        vNumPedido :=
+          TJSONNumber(TJSONArray(TRESTPeticion.GetContent('EnviarPedido',
+          vListaParams)).Items[0]).AsInt;
+
+        if vNumPedido <> -99 then
+          EstablecerMensaje(MSG_PEDIDO_GUARDADO + ' No. ' + vNumPedido.ToString)
+        else
+          EstablecerMensaje(MSG_ERROR_PEDIDO);
+
+      finally
+      end;
+    end;
   end;
 end;
 
 procedure TMain.SpeedButton7Click(Sender: TObject);
 begin
+  if VConsulta = 'Consulta' then
+  begin
+    TCPrincipal.ActiveTab := TICliente;
+  end
+  else if VConsulta = 'Pedido' then
+  begin
+    TCPrincipal.ActiveTab := TIPedido;
+  end;
 
-  TCPrincipal.ActiveTab := TIPedido;
+end;
+
+procedure TMain.SpeedButton8Click(Sender: TObject);
+begin
+  LVDisponibilidadItem.OnItemClick := nil;
+  TCPrincipal.ActiveTab := TIBucar_Item;
+  TCBusquedaItems.ActiveTab := TIBusquedaItems;
+  SBItems.SetFocus;
+  LVItems.Items.Clear;
+  SBItems.Text := '';
+  VConsulta := 'Consulta';
 end;
 
 procedure TMain.SpeedButton9Click(Sender: TObject);
 begin
-if CDSPedidoD.RecordCount <> 0 then
+  if CDSPedidoD.RecordCount <> 0 then
     CDSPedidoD.Delete;
+  CalcularTotales;
 end;
 
 procedure TMain.ValidaYEjecuta(Proc: TProc; out pITask: ITask);
@@ -1064,7 +1407,9 @@ begin
   end
   else
   begin
+
     CPCargando.Visible := True;
+    AIPpalCargando.Visible := True;
     AIPpalCargando.Enabled := True;
 
     pITask := TTask.Run(
@@ -1079,15 +1424,16 @@ begin
                 Proc
               end);
           except
-            vValidacionCorrecta := False;
-            EstablecerMensaje(MSG_ReviseConexionInternet);
+//            vValidacionCorrecta := False;
+//            EstablecerMensaje(MSG_ReviseConexionInternet);
           end;
         finally
           TThread.Synchronize(TThread.CurrentThread,
             procedure
             begin
-              AIPpalCargando.Enabled := False;
               CPCargando.Visible := False;
+              AIPpalCargando.Visible := False;
+              AIPpalCargando.Enabled := False;
             end);
           TMonitor.Exit(vlMonitor);
         end;

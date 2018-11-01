@@ -6,7 +6,7 @@
         <MainSource>PedidosMoviles.dpr</MainSource>
         <Base>True</Base>
         <Config Condition="'$(Config)'==''">Debug</Config>
-        <Platform Condition="'$(Platform)'==''">Android</Platform>
+        <Platform Condition="'$(Platform)'==''">Win32</Platform>
         <TargetedPlatforms>1119</TargetedPlatforms>
         <AppType>Application</AppType>
     </PropertyGroup>
@@ -135,6 +135,7 @@
         <EnabledSysJars>android-support-v4.dex.jar;cloud-messaging.dex.jar;fmx.dex.jar;google-analytics-v2.dex.jar;google-play-billing.dex.jar;google-play-licensing.dex.jar;google-play-services-ads-7.0.0.dex.jar;google-play-services-analytics-7.0.0.dex.jar;google-play-services-base-7.0.0.dex.jar;google-play-services-identity-7.0.0.dex.jar;google-play-services-maps-7.0.0.dex.jar;google-play-services-panorama-7.0.0.dex.jar;google-play-services-plus-7.0.0.dex.jar;google-play-services-wallet-7.0.0.dex.jar;google-play-services.dex.jar</EnabledSysJars>
         <VerInfo_Build>1</VerInfo_Build>
         <IncludeAndroid_Splash>False</IncludeAndroid_Splash>
+        <VerInfo_AutoIncVersion>true</VerInfo_AutoIncVersion>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_iOSDevice32)'!=''">
         <DCC_UsePackage>DBXSqliteDriver;DBXInterBaseDriver;tethering;bindcompfmx;FmxTeeUI;fmx;FireDACDBXDriver;dbexpress;IndyCore;dsnap;DataSnapCommon;bindengine;DataSnapClient;bindcompdbx;IndyIPCommon;IndyIPServer;IndySystem;fmxFireDAC;ibmonitor;FMXTee;DbxCommonDriver;ibxpress;xmlrtl;DataSnapNativeClient;ibxbindings;rtl;FireDACDSDriver;DbxClientDriver;CustomIPTransport;bindcomp;IndyIPClient;dbxcds;dsnapxml;DataSnapProviderClient;dbrtl;IndyProtocols;fmxase;$(DCC_UsePackage)</DCC_UsePackage>
@@ -280,8 +281,8 @@
         <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
         <VerInfo_Locale>1033</VerInfo_Locale>
         <Manifest_File>$(BDS)\bin\default_app.manifest</Manifest_File>
-        <UWP_DelphiLogo44>$(BDS)\bin\Artwork\Windows\UWP\delphi_UwpDefault_44.png</UWP_DelphiLogo44>
-        <UWP_DelphiLogo150>$(BDS)\bin\Artwork\Windows\UWP\delphi_UwpDefault_150.png</UWP_DelphiLogo150>
+        <UWP_DelphiLogo44>..\PedSAIMovil\PedMovil XE10.2\Logos\Isotipo SAI Móvil Fondo\48x48-mdpi.png</UWP_DelphiLogo44>
+        <UWP_DelphiLogo150>..\PedSAIMovil\PedMovil XE10.2\Logos\Isotipo SAI Móvil Fondo\144x144-xxhdp.png</UWP_DelphiLogo150>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Win64)'!=''">
         <DCC_UsePackage>DBXSqliteDriver;DataSnapServerMidas;DBXDb2Driver;DBXInterBaseDriver;dxCoreRS25;dxRibbonCustomizationFormRS25;vclactnband;cxSchedulerTreeBrowserRS25;vclFireDAC;cxExportRS25;dxHttpIndyRequestRS25;tethering;FireDACADSDriver;cxPivotGridOLAPRS25;DBXMSSQLDriver;DatasnapConnectorsFreePascal;FireDACMSSQLDriver;cxSchedulerGridRS25;vcltouch;vcldb;bindcompfmx;Intraweb;DBXOracleDriver;inetdb;dxGaugeControlRS25;cxLibraryRS25;dxOfficeCoreRS25;FmxTeeUI;emsedge;fmx;fmxdae;dxTabbedMDIRS25;vclib;dxBarDBNavRS25;FireDACDBXDriver;dbexpress;IndyCore;dxFlowChartRS25;vclx;dsnap;DataSnapCommon;dxBarRS25;dxSpreadSheetConditionalFormattingDialogsRS25;dxTileControlRS25;dxdborRS25;DataSnapConnectors;dxMapControlRS25;dxDockingRS25;dxPDFViewerRS25;VCLRESTComponents;cxPageControlRS25;cxPivotGridRS25;dxWizardControlRS25;dxRichEditControlRS25;dxNavBarRS25;vclie;cxSchedulerRibbonStyleEventEditorRS25;bindengine;DBXMySQLDriver;FireDACOracleDriver;FireDACMySQLDriver;DBXFirebirdDriver;dxFireDACServerModeRS25;FireDACCommonODBC;DataSnapClient;cxTreeListRS25;bindcompdbx;IndyIPCommon;vcl;DBXSybaseASEDriver;IndyIPServer;dxBarExtItemsRS25;IndySystem;dxComnRS25;FireDACDb2Driver;dsnapcon;dxLayoutControlRS25;FireDACMSAccDriver;fmxFireDAC;FireDACInfxDriver;vclimg;EhLibADODataDrivers250;TeeDB;dxdbtrRS25;dxServerModeRS25;emshosting;dxSpreadSheetRS25;FireDACPgDriver;ibmonitor;FireDACASADriver;cxEditorsRS25;DBXOdbcDriver;FireDACTDataDriver;FMXTee;cxGridRS25;DbxCommonDriver;dxorgcRS25;ibxpress;Tee;DataSnapServer;xmlrtl;DataSnapNativeClient;fmxobj;vclwinx;ibxbindings;rtl;FireDACDSDriver;DbxClientDriver;cxDataRS25;DBXSybaseASADriver;cxTreeListdxBarPopupMenuRS25;CustomIPTransport;vcldsnap;dxmdsRS25;bindcomp;appanalytics;DBXInformixDriver;cxPivotGridChartRS25;IndyIPClient;dxBarExtDBItemsRS25;cxSchedulerRS25;bindcompvcl;dxDBXServerModeRS25;dxGDIPlusRS25;dxThemeRS25;TeeUI;dbxcds;VclSmp;adortl;FireDACODBCDriver;DataSnapIndy10ServerTransport;dxRibbonRS25;dsnapxml;DataSnapProviderClient;dbrtl;inetdbxpress;FireDACMongoDBDriver;IndyProtocols;EhLibDBXDataDrivers250;EhLib250;cxVerticalGridRS25;dxtrmdRS25;dxSpellCheckerRS25;dxADOServerModeRS25;fmxase;$(DCC_UsePackage)</DCC_UsePackage>
@@ -291,8 +292,8 @@
         <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
         <VerInfo_Locale>1033</VerInfo_Locale>
         <Manifest_File>$(BDS)\bin\default_app.manifest</Manifest_File>
-        <UWP_DelphiLogo44>$(BDS)\bin\Artwork\Windows\UWP\delphi_UwpDefault_44.png</UWP_DelphiLogo44>
-        <UWP_DelphiLogo150>$(BDS)\bin\Artwork\Windows\UWP\delphi_UwpDefault_150.png</UWP_DelphiLogo150>
+        <UWP_DelphiLogo44>..\PedSAIMovil\PedMovil XE10.2\Logos\Isotipo SAI Móvil Fondo\48x48-mdpi.png</UWP_DelphiLogo44>
+        <UWP_DelphiLogo150>..\PedSAIMovil\PedMovil XE10.2\Logos\Isotipo SAI Móvil Fondo\144x144-xxhdp.png</UWP_DelphiLogo150>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1)'!=''">
         <DCC_Define>DEBUG;$(DCC_Define)</DCC_Define>
@@ -305,15 +306,22 @@
     <PropertyGroup Condition="'$(Cfg_1_Android)'!=''">
         <VerInfo_Build>1</VerInfo_Build>
         <IncludeAndroid_Splash>False</IncludeAndroid_Splash>
+        <VerInfo_AutoIncVersion>true</VerInfo_AutoIncVersion>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1_Win32)'!=''">
         <DCC_RemoteDebug>false</DCC_RemoteDebug>
         <AppEnableRuntimeThemes>true</AppEnableRuntimeThemes>
         <AppEnableHighDPI>true</AppEnableHighDPI>
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <VerInfo_Locale>1033</VerInfo_Locale>
+        <UWP_DelphiLogo44>..\PedSAIMovil\PedMovil XE10.2\Logos\Isotipo SAI Móvil Fondo\48x48-mdpi.png</UWP_DelphiLogo44>
+        <UWP_DelphiLogo150>..\PedSAIMovil\PedMovil XE10.2\Logos\Isotipo SAI Móvil Fondo\144x144-xxhdp.png</UWP_DelphiLogo150>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1_Win64)'!=''">
         <AppEnableRuntimeThemes>true</AppEnableRuntimeThemes>
         <AppEnableHighDPI>true</AppEnableHighDPI>
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <VerInfo_Locale>1033</VerInfo_Locale>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2)'!=''">
         <DCC_LocalDebugSymbols>false</DCC_LocalDebugSymbols>
@@ -329,10 +337,14 @@
     <PropertyGroup Condition="'$(Cfg_2_Win32)'!=''">
         <AppEnableRuntimeThemes>true</AppEnableRuntimeThemes>
         <AppEnableHighDPI>true</AppEnableHighDPI>
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <VerInfo_Locale>1033</VerInfo_Locale>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2_Win64)'!=''">
         <AppEnableRuntimeThemes>true</AppEnableRuntimeThemes>
         <AppEnableHighDPI>true</AppEnableHighDPI>
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <VerInfo_Locale>1033</VerInfo_Locale>
     </PropertyGroup>
     <ItemGroup>
         <DelphiCompile Include="$(MainSource)">
@@ -377,15 +389,16 @@
                 </Excluded_Packages>
             </Delphi.Personality>
             <Deployment Version="3">
-                <DeployFile LocalName="ModelSupport_PedidosMoviles\default.txaPackage" Configuration="Release" Class="ProjectFile">
-                    <Platform Name="Android">
-                        <RemoteDir>.\assets\internal\</RemoteDir>
+                <DeployFile LocalName="..\PedSAIMovil\PedMovil XE10.2\Logos\Isotipo SAI Móvil Fondo\144x144-xxhdp.png" Configuration="Debug" Class="UWP_DelphiLogo150">
+                    <Platform Name="Win32">
+                        <RemoteDir>Assets\</RemoteDir>
+                        <RemoteName>Logo150x150.png</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="..\PedSAIMovil\PedMovil XE10.2\Logos\Isotipo SAI Móvil Fondo\36x36-ldpi.png" Configuration="Debug" Class="Android_LauncherIcon36">
+                <DeployFile LocalName="ModelSupport_PedidosMoviles\default.txaPackage" Configuration="Release" Class="ProjectFile">
                     <Platform Name="Android">
-                        <RemoteName>ic_launcher.png</RemoteName>
+                        <RemoteDir>.\assets\internal\</RemoteDir>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
@@ -407,15 +420,9 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="..\PedSAIMovil\PedMovil XE10.2\Logos\Isotipo SAI Móvil Fondo\72x72-hdpi.png" Configuration="Debug" Class="Android_LauncherIcon72">
+                <DeployFile LocalName="..\PedSAIMovil\PedMovil XE10.2\Logos\Isotipo SAI Móvil Fondo\36x36-ldpi.png" Configuration="Debug" Class="Android_LauncherIcon36">
                     <Platform Name="Android">
                         <RemoteName>ic_launcher.png</RemoteName>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="..\PedSAIMovil\PedMovil XE10.2\Logos\Isotipo SAI Móvil Fondo\640x480-large.png" Configuration="Debug" Class="Android_SplashImage640">
-                    <Platform Name="Android">
-                        <RemoteName>splash_image.png</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
@@ -425,7 +432,7 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="..\PedSAIMovil\PedMovil XE10.2\Logos\Isotipo SAI Móvil Fondo\960x720-xlarge.png" Configuration="Debug" Class="Android_SplashImage960">
+                <DeployFile LocalName="..\PedSAIMovil\PedMovil XE10.2\Logos\Isotipo SAI Móvil Fondo\640x480-large.png" Configuration="Debug" Class="Android_SplashImage640">
                     <Platform Name="Android">
                         <RemoteName>splash_image.png</RemoteName>
                         <Overwrite>true</Overwrite>
@@ -437,7 +444,13 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="..\PedSAIMovil\PedMovil XE10.2\Logos\Isotipo SAI Móvil Fondo\426x320-small.png" Configuration="Debug" Class="Android_SplashImage426">
+                <DeployFile LocalName="..\PedSAIMovil\PedMovil XE10.2\Logos\Isotipo SAI Móvil Fondo\96x96-xhdpi.png" Configuration="Debug" Class="Android_LauncherIcon96">
+                    <Platform Name="Android">
+                        <RemoteName>ic_launcher.png</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\PedSAIMovil\PedMovil XE10.2\Logos\Isotipo SAI Móvil Fondo\960x720-xlarge.png" Configuration="Debug" Class="Android_SplashImage960">
                     <Platform Name="Android">
                         <RemoteName>splash_image.png</RemoteName>
                         <Overwrite>true</Overwrite>
@@ -446,12 +459,6 @@
                 <DeployFile LocalName="Android\Debug\libPedidosMoviles.so" Configuration="Debug" Class="ProjectOutput">
                     <Platform Name="Android">
                         <RemoteName>libPedidosMoviles.so</RemoteName>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="..\PedSAIMovil\PedMovil XE10.2\Logos\Isotipo SAI Móvil Fondo\48x48-mdpi.png" Configuration="Debug" Class="Android_LauncherIcon48">
-                    <Platform Name="Android">
-                        <RemoteName>ic_launcher.png</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
@@ -482,6 +489,25 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
+                <DeployFile LocalName="..\PedSAIMovil\PedMovil XE10.2\Logos\Isotipo SAI Móvil Fondo\470x320-normal.png" Configuration="Debug" Class="Android_SplashImage470">
+                    <Platform Name="Android">
+                        <RemoteName>splash_image.png</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\PedSAIMovil\PedMovil XE10.2\Logos\Isotipo SAI Móvil Fondo\48x48-mdpi.png" Configuration="Debug" Class="UWP_DelphiLogo44">
+                    <Platform Name="Win32">
+                        <RemoteDir>Assets\</RemoteDir>
+                        <RemoteName>Logo44x44.png</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\PedSAIMovil\PedMovil XE10.2\Logos\Isotipo SAI Móvil Fondo\72x72-hdpi.png" Configuration="Debug" Class="Android_LauncherIcon72">
+                    <Platform Name="Android">
+                        <RemoteName>ic_launcher.png</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
                 <DeployFile LocalName="$(BDS)\bin\Artwork\Android\FM_LauncherIcon_144x144.png" Configuration="Release" Class="Android_LauncherIcon144">
                     <Platform Name="Android">
                         <RemoteName>ic_launcher.png</RemoteName>
@@ -505,7 +531,7 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="..\PedSAIMovil\PedMovil XE10.2\Logos\Isotipo SAI Móvil Fondo\144x144-xxhdp.png" Configuration="Debug" Class="Android_LauncherIcon144">
+                <DeployFile LocalName="$(BDS)\bin\Artwork\Android\FM_LauncherIcon_96x96.png" Configuration="Release" Class="Android_LauncherIcon96">
                     <Platform Name="Android">
                         <RemoteName>ic_launcher.png</RemoteName>
                         <Overwrite>true</Overwrite>
@@ -527,7 +553,7 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="..\PedSAIMovil\PedMovil XE10.2\Logos\Isotipo SAI Móvil Fondo\470x320-normal.png" Configuration="Debug" Class="Android_SplashImage470">
+                <DeployFile LocalName="..\PedSAIMovil\PedMovil XE10.2\Logos\Isotipo SAI Móvil Fondo\426x320-small.png" Configuration="Debug" Class="Android_SplashImage426">
                     <Platform Name="Android">
                         <RemoteName>splash_image.png</RemoteName>
                         <Overwrite>true</Overwrite>
@@ -536,12 +562,6 @@
                 <DeployFile LocalName="$(BDS)\lib\android\debug\mips\libnative-activity.so" Configuration="Release" Class="AndroidLibnativeMipsFile">
                     <Platform Name="Android">
                         <RemoteName>libPedidosMoviles.so</RemoteName>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="$(BDS)\bin\Artwork\Android\FM_LauncherIcon_96x96.png" Configuration="Release" Class="Android_LauncherIcon96">
-                    <Platform Name="Android">
-                        <RemoteName>ic_launcher.png</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
@@ -556,15 +576,35 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="..\PedSAIMovil\PedMovil XE10.2\Logos\Isotipo SAI Móvil Fondo\96x96-xhdpi.png" Configuration="Debug" Class="Android_LauncherIcon96">
-                    <Platform Name="Android">
-                        <RemoteName>ic_launcher.png</RemoteName>
+                <DeployFile LocalName="..\PedSAIMovil\PedMovil XE10.2\Logos\Isotipo SAI Móvil Fondo\48x48-mdpi.png" Configuration="Debug" Class="UWP_DelphiLogo44">
+                    <Platform Name="Win64">
+                        <RemoteDir>Assets\</RemoteDir>
+                        <RemoteName>Logo44x44.png</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
                 <DeployFile LocalName="$(BDS)\bin\Artwork\Android\FM_SplashImage_640x480.png" Configuration="Release" Class="Android_SplashImage640">
                     <Platform Name="Android">
                         <RemoteName>splash_image.png</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\PedSAIMovil\PedMovil XE10.2\Logos\Isotipo SAI Móvil Fondo\144x144-xxhdp.png" Configuration="Debug" Class="UWP_DelphiLogo150">
+                    <Platform Name="Win64">
+                        <RemoteDir>Assets\</RemoteDir>
+                        <RemoteName>Logo150x150.png</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\PedSAIMovil\PedMovil XE10.2\Logos\Isotipo SAI Móvil Fondo\48x48-mdpi.png" Configuration="Debug" Class="Android_LauncherIcon48">
+                    <Platform Name="Android">
+                        <RemoteName>ic_launcher.png</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\PedSAIMovil\PedMovil XE10.2\Logos\Isotipo SAI Móvil Fondo\144x144-xxhdp.png" Configuration="Debug" Class="Android_LauncherIcon144">
+                    <Platform Name="Android">
+                        <RemoteName>ic_launcher.png</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>

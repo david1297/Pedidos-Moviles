@@ -10,9 +10,46 @@
         <DeviceId Condition="'$(Platform)'=='iOSSimulator'">iPhone5</DeviceId>
     </PropertyGroup>
     <ItemGroup Condition="'$(Platform)'=='iOSDevice64'"/>
-    <ItemGroup Condition="'$(Platform)'=='Win64'"/>
+    <ItemGroup Condition="'$(Platform)'=='Win64'">
+        <DeployFile Include="..\PedSAIMovil\PedMovil XE10.2\Logos\Isotipo SAI Móvil Fondo\48x48-mdpi.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>PedidosMoviles\Assets\</RemoteDir>
+            <RemoteName>Logo44x44.png</RemoteName>
+            <DeployClass>UWP_DelphiLogo44</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\PedSAIMovil\PedMovil XE10.2\Logos\Isotipo SAI Móvil Fondo\144x144-xxhdp.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>PedidosMoviles\Assets\</RemoteDir>
+            <RemoteName>Logo150x150.png</RemoteName>
+            <DeployClass>UWP_DelphiLogo150</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+    </ItemGroup>
     <ItemGroup Condition="'$(Platform)'=='iOSDevice32'"/>
     <ItemGroup Condition="'$(Platform)'=='Win32'">
+        <DeployFile Include="..\PedSAIMovil\PedMovil XE10.2\Logos\Isotipo SAI Móvil Fondo\144x144-xxhdp.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>PedidosMoviles\Assets\</RemoteDir>
+            <RemoteName>Logo150x150.png</RemoteName>
+            <DeployClass>UWP_DelphiLogo150</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\PedSAIMovil\PedMovil XE10.2\Logos\Isotipo SAI Móvil Fondo\48x48-mdpi.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>PedidosMoviles\Assets\</RemoteDir>
+            <RemoteName>Logo44x44.png</RemoteName>
+            <DeployClass>UWP_DelphiLogo44</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
         <DeployFile Include="Win32\Debug\PedidosMoviles.exe" Condition="'$(Config)'=='Debug'">
             <RemoteDir>PedidosMoviles\</RemoteDir>
             <RemoteName>PedidosMoviles.exe</RemoteName>
@@ -55,15 +92,6 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="..\PedSAIMovil\PedMovil XE10.2\Logos\Isotipo SAI Móvil Fondo\36x36-ldpi.png" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>PedidosMoviles\res\drawable-ldpi\</RemoteDir>
-            <RemoteName>ic_launcher.png</RemoteName>
-            <DeployClass>Android_LauncherIcon36</DeployClass>
-            <Operation>1</Operation>
-            <LocalCommand/>
-            <RemoteCommand/>
-            <Overwrite>True</Overwrite>
-        </DeployFile>
         <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_LauncherIcon_36x36.png" Condition="'$(Config)'=='Release'">
             <RemoteDir>PedidosMoviles\res\drawable-ldpi\</RemoteDir>
             <RemoteName>ic_launcher.png</RemoteName>
@@ -91,19 +119,10 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="..\PedSAIMovil\PedMovil XE10.2\Logos\Isotipo SAI Móvil Fondo\72x72-hdpi.png" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>PedidosMoviles\res\drawable-hdpi\</RemoteDir>
+        <DeployFile Include="..\PedSAIMovil\PedMovil XE10.2\Logos\Isotipo SAI Móvil Fondo\36x36-ldpi.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>PedidosMoviles\res\drawable-ldpi\</RemoteDir>
             <RemoteName>ic_launcher.png</RemoteName>
-            <DeployClass>Android_LauncherIcon72</DeployClass>
-            <Operation>1</Operation>
-            <LocalCommand/>
-            <RemoteCommand/>
-            <Overwrite>True</Overwrite>
-        </DeployFile>
-        <DeployFile Include="..\PedSAIMovil\PedMovil XE10.2\Logos\Isotipo SAI Móvil Fondo\640x480-large.png" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>PedidosMoviles\res\drawable-large\</RemoteDir>
-            <RemoteName>splash_image.png</RemoteName>
-            <DeployClass>Android_SplashImage640</DeployClass>
+            <DeployClass>Android_LauncherIcon36</DeployClass>
             <Operation>1</Operation>
             <LocalCommand/>
             <RemoteCommand/>
@@ -118,10 +137,10 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="..\PedSAIMovil\PedMovil XE10.2\Logos\Isotipo SAI Móvil Fondo\960x720-xlarge.png" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>PedidosMoviles\res\drawable-xlarge\</RemoteDir>
+        <DeployFile Include="..\PedSAIMovil\PedMovil XE10.2\Logos\Isotipo SAI Móvil Fondo\640x480-large.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>PedidosMoviles\res\drawable-large\</RemoteDir>
             <RemoteName>splash_image.png</RemoteName>
-            <DeployClass>Android_SplashImage960</DeployClass>
+            <DeployClass>Android_SplashImage640</DeployClass>
             <Operation>1</Operation>
             <LocalCommand/>
             <RemoteCommand/>
@@ -136,10 +155,19 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="..\PedSAIMovil\PedMovil XE10.2\Logos\Isotipo SAI Móvil Fondo\426x320-small.png" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>PedidosMoviles\res\drawable-small\</RemoteDir>
+        <DeployFile Include="..\PedSAIMovil\PedMovil XE10.2\Logos\Isotipo SAI Móvil Fondo\96x96-xhdpi.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>PedidosMoviles\res\drawable-xhdpi\</RemoteDir>
+            <RemoteName>ic_launcher.png</RemoteName>
+            <DeployClass>Android_LauncherIcon96</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\PedSAIMovil\PedMovil XE10.2\Logos\Isotipo SAI Móvil Fondo\960x720-xlarge.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>PedidosMoviles\res\drawable-xlarge\</RemoteDir>
             <RemoteName>splash_image.png</RemoteName>
-            <DeployClass>Android_SplashImage426</DeployClass>
+            <DeployClass>Android_SplashImage960</DeployClass>
             <Operation>1</Operation>
             <LocalCommand/>
             <RemoteCommand/>
@@ -154,15 +182,6 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
             <Required>True</Required>
-        </DeployFile>
-        <DeployFile Include="..\PedSAIMovil\PedMovil XE10.2\Logos\Isotipo SAI Móvil Fondo\48x48-mdpi.png" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>PedidosMoviles\res\drawable-mdpi\</RemoteDir>
-            <RemoteName>ic_launcher.png</RemoteName>
-            <DeployClass>Android_LauncherIcon48</DeployClass>
-            <Operation>1</Operation>
-            <LocalCommand/>
-            <RemoteCommand/>
-            <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="$(NDKBasePath)\prebuilt\android-arm\gdbserver\gdbserver" Condition="'$(Config)'=='Release'">
             <RemoteDir>PedidosMoviles\library\lib\armeabi-v7a\</RemoteDir>
@@ -195,6 +214,24 @@
             <RemoteDir>PedidosMoviles\library\lib\armeabi-v7a\</RemoteDir>
             <RemoteName>gdbserver</RemoteName>
             <DeployClass>AndroidGDBServer</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\PedSAIMovil\PedMovil XE10.2\Logos\Isotipo SAI Móvil Fondo\470x320-normal.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>PedidosMoviles\res\drawable-normal\</RemoteDir>
+            <RemoteName>splash_image.png</RemoteName>
+            <DeployClass>Android_SplashImage470</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\PedSAIMovil\PedMovil XE10.2\Logos\Isotipo SAI Móvil Fondo\72x72-hdpi.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>PedidosMoviles\res\drawable-hdpi\</RemoteDir>
+            <RemoteName>ic_launcher.png</RemoteName>
+            <DeployClass>Android_LauncherIcon72</DeployClass>
             <Operation>1</Operation>
             <LocalCommand/>
             <RemoteCommand/>
@@ -236,19 +273,19 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="..\PedSAIMovil\PedMovil XE10.2\Logos\Isotipo SAI Móvil Fondo\144x144-xxhdp.png" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>PedidosMoviles\res\drawable-xxhdpi\</RemoteDir>
+        <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_LauncherIcon_96x96.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>PedidosMoviles\res\drawable-xhdpi\</RemoteDir>
             <RemoteName>ic_launcher.png</RemoteName>
-            <DeployClass>Android_LauncherIcon144</DeployClass>
+            <DeployClass>Android_LauncherIcon96</DeployClass>
             <Operation>1</Operation>
             <LocalCommand/>
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="..\PedSAIMovil\PedMovil XE10.2\Logos\Isotipo SAI Móvil Fondo\470x320-normal.png" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>PedidosMoviles\res\drawable-normal\</RemoteDir>
+        <DeployFile Include="..\PedSAIMovil\PedMovil XE10.2\Logos\Isotipo SAI Móvil Fondo\426x320-small.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>PedidosMoviles\res\drawable-small\</RemoteDir>
             <RemoteName>splash_image.png</RemoteName>
-            <DeployClass>Android_SplashImage470</DeployClass>
+            <DeployClass>Android_SplashImage426</DeployClass>
             <Operation>1</Operation>
             <LocalCommand/>
             <RemoteCommand/>
@@ -263,15 +300,6 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_LauncherIcon_96x96.png" Condition="'$(Config)'=='Release'">
-            <RemoteDir>PedidosMoviles\res\drawable-xhdpi\</RemoteDir>
-            <RemoteName>ic_launcher.png</RemoteName>
-            <DeployClass>Android_LauncherIcon96</DeployClass>
-            <Operation>1</Operation>
-            <LocalCommand/>
-            <RemoteCommand/>
-            <Overwrite>True</Overwrite>
-        </DeployFile>
         <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_SplashImage_470x320.png" Condition="'$(Config)'=='Release'">
             <RemoteDir>PedidosMoviles\res\drawable-normal\</RemoteDir>
             <RemoteName>splash_image.png</RemoteName>
@@ -281,19 +309,28 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="..\PedSAIMovil\PedMovil XE10.2\Logos\Isotipo SAI Móvil Fondo\96x96-xhdpi.png" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>PedidosMoviles\res\drawable-xhdpi\</RemoteDir>
-            <RemoteName>ic_launcher.png</RemoteName>
-            <DeployClass>Android_LauncherIcon96</DeployClass>
+        <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_SplashImage_640x480.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>PedidosMoviles\res\drawable-large\</RemoteDir>
+            <RemoteName>splash_image.png</RemoteName>
+            <DeployClass>Android_SplashImage640</DeployClass>
             <Operation>1</Operation>
             <LocalCommand/>
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_SplashImage_640x480.png" Condition="'$(Config)'=='Release'">
-            <RemoteDir>PedidosMoviles\res\drawable-large\</RemoteDir>
-            <RemoteName>splash_image.png</RemoteName>
-            <DeployClass>Android_SplashImage640</DeployClass>
+        <DeployFile Include="..\PedSAIMovil\PedMovil XE10.2\Logos\Isotipo SAI Móvil Fondo\48x48-mdpi.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>PedidosMoviles\res\drawable-mdpi\</RemoteDir>
+            <RemoteName>ic_launcher.png</RemoteName>
+            <DeployClass>Android_LauncherIcon48</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\PedSAIMovil\PedMovil XE10.2\Logos\Isotipo SAI Móvil Fondo\144x144-xxhdp.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>PedidosMoviles\res\drawable-xxhdpi\</RemoteDir>
+            <RemoteName>ic_launcher.png</RemoteName>
+            <DeployClass>Android_LauncherIcon144</DeployClass>
             <Operation>1</Operation>
             <LocalCommand/>
             <RemoteCommand/>
