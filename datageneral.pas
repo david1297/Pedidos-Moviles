@@ -19,8 +19,7 @@ type
       SiNoValidaUser: TProc = nil);
   end;
 
-const
-  cHostName_DUMMY = '142.4.202.90';
+
 
 var
   DMGeneral: TDMGeneral;

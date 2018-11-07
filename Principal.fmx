@@ -16,7 +16,7 @@ object Main: TMain
     Size.Width = 640.000000000000000000
     Size.Height = 610.000000000000000000
     Size.PlatformDefault = False
-    TabIndex = 3
+    TabIndex = 1
     TabOrder = 0
     TabPosition = PlatformDefault
     Sizes = (
@@ -120,7 +120,7 @@ object Main: TMain
       CustomIcon = <
         item
         end>
-      IsSelected = False
+      IsSelected = True
       Size.Width = 106.000000000000000000
       Size.Height = 26.000000000000000000
       Size.PlatformDefault = False
@@ -573,7 +573,7 @@ object Main: TMain
           Size.PlatformDefault = False
           StyleLookup = 'backtoolbutton'
           Text = 'Atras'
-          OnClick = SpeedButton2Click
+          OnClick = SpeedButton5Click
         end
         object SpeedButton6: TSpeedButton
           Align = Right
@@ -604,7 +604,7 @@ object Main: TMain
         Size.Width = 640.000000000000000000
         Size.Height = 399.000000000000000000
         Size.PlatformDefault = False
-        TabIndex = 1
+        TabIndex = 0
         TabOrder = 2
         TabPosition = PlatformDefault
         Sizes = (
@@ -616,7 +616,7 @@ object Main: TMain
           CustomIcon = <
             item
             end>
-          IsSelected = False
+          IsSelected = True
           Size.Width = 85.000000000000000000
           Size.Height = 26.000000000000000000
           Size.PlatformDefault = False
@@ -628,7 +628,7 @@ object Main: TMain
           object ListBox1: TListBox
             Align = Client
             Size.Width = 640.000000000000000000
-            Size.Height = 340.000000000000000000
+            Size.Height = 296.000000000000000000
             Size.PlatformDefault = False
             TabOrder = 1
             DisableFocusEffect = True
@@ -636,7 +636,7 @@ object Main: TMain
             DefaultItemStyles.GroupHeaderStyle = ''
             DefaultItemStyles.GroupFooterStyle = ''
             Viewport.Width = 636.000000000000000000
-            Viewport.Height = 336.000000000000000000
+            Viewport.Height = 292.000000000000000000
             object ListBoxItem1: TListBoxItem
               Size.Width = 636.000000000000000000
               Size.Height = 25.000000000000000000
@@ -790,33 +790,6 @@ object Main: TMain
                 Size.PlatformDefault = False
               end
             end
-            object Panel6: TPanel
-              Align = Bottom
-              Position.Y = 292.000000000000000000
-              Size.Width = 636.000000000000000000
-              Size.Height = 44.000000000000000000
-              Size.PlatformDefault = False
-              TabOrder = 0
-              object SpeedButton9: TSpeedButton
-                Align = Right
-                Position.X = 556.000000000000000000
-                Size.Width = 80.000000000000000000
-                Size.Height = 44.000000000000000000
-                Size.PlatformDefault = False
-                StyleLookup = 'trashtoolbuttonbordered'
-                Text = 'SpeedButton4'
-                OnClick = SpeedButton9Click
-              end
-              object SpeedButton10: TSpeedButton
-                Align = Left
-                Size.Width = 80.000000000000000000
-                Size.Height = 44.000000000000000000
-                Size.PlatformDefault = False
-                StyleLookup = 'composetoolbuttonbordered'
-                Text = 'SpeedButton10'
-                OnClick = SpeedButton10Click
-              end
-            end
           end
           object Label27: TLabel
             Align = Top
@@ -830,12 +803,39 @@ object Main: TMain
             TextSettings.HorzAlign = Center
             TabOrder = 0
           end
+          object Panel6: TPanel
+            Align = Bottom
+            Position.Y = 329.000000000000000000
+            Size.Width = 640.000000000000000000
+            Size.Height = 44.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 2
+            object SpeedButton9: TSpeedButton
+              Align = Right
+              Position.X = 560.000000000000000000
+              Size.Width = 80.000000000000000000
+              Size.Height = 44.000000000000000000
+              Size.PlatformDefault = False
+              StyleLookup = 'trashtoolbuttonbordered'
+              Text = 'SpeedButton4'
+              OnClick = SpeedButton9Click
+            end
+            object SpeedButton10: TSpeedButton
+              Align = Left
+              Size.Width = 80.000000000000000000
+              Size.Height = 44.000000000000000000
+              Size.PlatformDefault = False
+              StyleLookup = 'composetoolbuttonbordered'
+              Text = 'SpeedButton10'
+              OnClick = SpeedButton10Click
+            end
+          end
         end
         object TIPedidoItems: TTabItem
           CustomIcon = <
             item
             end>
-          IsSelected = True
+          IsSelected = False
           Size.Width = 110.000000000000000000
           Size.Height = 26.000000000000000000
           Size.PlatformDefault = False
@@ -949,7 +949,7 @@ object Main: TMain
       CustomIcon = <
         item
         end>
-      IsSelected = True
+      IsSelected = False
       Size.Width = 106.000000000000000000
       Size.Height = 26.000000000000000000
       Size.PlatformDefault = False
@@ -993,7 +993,7 @@ object Main: TMain
         Size.Height = 544.000000000000000000
         Size.PlatformDefault = False
         TabHeight = 49.000000000000000000
-        TabIndex = 0
+        TabIndex = 1
         TabOrder = 3
         TabPosition = PlatformDefault
         Sizes = (
@@ -1005,7 +1005,7 @@ object Main: TMain
           CustomIcon = <
             item
             end>
-          IsSelected = True
+          IsSelected = False
           Size.Width = 319.000000000000000000
           Size.Height = 49.000000000000000000
           Size.PlatformDefault = False
@@ -1040,7 +1040,7 @@ object Main: TMain
           CustomIcon = <
             item
             end>
-          IsSelected = False
+          IsSelected = True
           Size.Width = 319.000000000000000000
           Size.Height = 49.000000000000000000
           Size.PlatformDefault = False
@@ -1078,6 +1078,13 @@ object Main: TMain
                 Appearance.Height = 25.000000000000000000
                 Appearance.PlaceOffset.X = -2.000000000000000000
                 Appearance.PlaceOffset.Y = 24.000000000000000000
+              end
+              item
+                AppearanceObjectName = 'Cant'
+                AppearanceClassName = 'TTextObjectAppearance'
+                Appearance.Width = 137.000000000000000000
+                Appearance.Height = 50.000000000000000000
+                Appearance.PlaceOffset.X = 382.000000000000000000
               end>
             ItemAppearanceObjects.ItemEditObjects.ObjectsCollection = <
               item
@@ -1213,7 +1220,7 @@ object Main: TMain
           TextSettings.Font.Size = 16.000000000000000000
           TextSettings.Font.StyleExt = {00090000000000000004000000}
           TextSettings.HorzAlign = Center
-          Text = 'Busqueda De Productos'
+          Text = 'Busqueda De Pedidos'
           TabOrder = 0
         end
       end
@@ -1222,11 +1229,12 @@ object Main: TMain
         StyledSettings = [FontColor]
         Position.Y = 40.000000000000000000
         Size.Width = 640.000000000000000000
-        Size.Height = 33.000000000000000000
+        Size.Height = 49.000000000000000000
         Size.PlatformDefault = False
         TextSettings.Font.Family = 'Arial'
         TextSettings.Font.Size = 14.000000000000000000
         TextSettings.Font.StyleExt = {00090000000000000004000000}
+        TextSettings.HorzAlign = Center
         Text = '   Nombre del Cliente'
         TabOrder = 2
       end
@@ -1238,7 +1246,7 @@ object Main: TMain
         AlternatingColors = True
         Align = Client
         Size.Width = 640.000000000000000000
-        Size.Height = 511.000000000000000000
+        Size.Height = 495.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 7
         ItemAppearanceObjects.ItemObjects.ObjectsCollection = <
@@ -1341,9 +1349,11 @@ object Main: TMain
     CalloutLength = 11.000000000000000000
     object AIPpalCargando: TAniIndicator
       Align = Client
+      Enabled = True
       Size.Width = 640.000000000000000000
       Size.Height = 469.000000000000000000
       Size.PlatformDefault = False
+      Visible = False
     end
   end
   object MvConfiguracion: TMultiView
@@ -1452,6 +1462,7 @@ object Main: TMain
       object EdContra: TEdit
         Touch.InteractiveGestures = [LongTap, DoubleTap]
         TabOrder = 7
+        Password = True
         Position.X = 128.000000000000000000
         Position.Y = 209.000000000000000000
         Size.Width = 105.000000000000000000
@@ -1633,13 +1644,6 @@ object Main: TMain
       FillHeaderExpressions = <>
       FillBreakGroups = <>
     end
-    object LinkControlToField1: TLinkControlToField
-      Category = 'Quick Bindings'
-      DataSource = BindSourceDB4
-      FieldName = 'CANTIDAD'
-      Control = EdCantidad
-      Track = False
-    end
     object LinkControlToField2: TLinkControlToField
       Category = 'Quick Bindings'
       DataSource = BindSourceDB4
@@ -1725,6 +1729,13 @@ object Main: TMain
       FillExpressions = <>
       FillHeaderExpressions = <>
       FillBreakGroups = <>
+    end
+    object LinkControlToField1: TLinkControlToField
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB4
+      FieldName = 'CANTIDAD'
+      Control = EdCantidad
+      Track = False
     end
   end
   object CDSItems: TClientDataSet
@@ -1847,7 +1858,7 @@ object Main: TMain
   object BindSourceDB4: TBindSourceDB
     DataSet = CDSPedidoD
     ScopeMappings = <>
-    Left = 376
-    Top = 160
+    Left = 328
+    Top = 104
   end
 end

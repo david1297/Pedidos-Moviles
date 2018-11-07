@@ -1,600 +1,600 @@
 ﻿[ToolBar1]
-Coordinates=825,166,58,33
+Coordinates=825,166,67,36
 
 [SpeedButton1]
-Coordinates=570,50,84,33
+Coordinates=570,50,96,36
 Visible=False
 
 []
-Coordinates=350,660,89,177
+Coordinates=10,1010,78,51
 Visible=True
 
 [MvConfiguracion]
-Coordinates=985,120,98,33
+Coordinates=985,120,111,36
 
 [TCPrincipal]
-Coordinates=890,120,71,33
+Coordinates=890,120,81,36
 
 [TICliente]
-Coordinates=825,120,57,33
+Coordinates=825,120,66,36
 
 [EdIP]
-Coordinates=978,120,40,51
+Coordinates=978,120,42,58
 
 [CPGeneral]
-Coordinates=1114,216,66,33
+Coordinates=1114,216,78,36
 
 [Conectar]
-Coordinates=1198,274,58,51
+Coordinates=1198,274,67,58
 
 [Label4]
-Coordinates=1101,63,46,33
+Coordinates=1101,63,53,36
 Visible=False
 
 [AAutenticando]
-Coordinates=1184,61,87,33
+Coordinates=1184,61,98,36
 
 [Label1]
-Coordinates=958,177,46,33
+Coordinates=958,177,53,36
 Visible=False
 
 [Panel1]
-Coordinates=520,210,47,33
+Coordinates=520,210,55,36
 Visible=False
 
 [Label7]
-Coordinates=867,100,46,33
+Coordinates=867,100,53,36
 Visible=False
 
 [CDAutenticacionPuerto]
-Coordinates=490,56,129,33
+Coordinates=490,56,148,36
 
 [Label2]
-Coordinates=958,100,46,33
+Coordinates=958,100,53,36
 Visible=False
 
 [CDAutenticacionIp]
-Coordinates=676,1,106,33
+Coordinates=676,1,121,36
 
 [EdUsuario]
-Coordinates=902,120,65,51
+Coordinates=902,120,75,58
 
 [Panel2]
-Coordinates=670,350,47,33
+Coordinates=670,350,55,36
 Visible=False
 
 [Label6]
-Coordinates=1029,62,46,33
+Coordinates=1029,62,53,36
 Visible=False
 
 [EdContra]
-Coordinates=1077,61,60,51
+Coordinates=1077,61,69,58
 
 [CDAutenticacion]
-Coordinates=959,197,97,123
+Coordinates=959,197,110,146
 
 [CDAutenticacionPassword]
-Coordinates=490,111,145,33
+Coordinates=490,111,167,36
 
 [LGMensaje]
-Coordinates=838,61,69,51
+Coordinates=838,61,80,58
 
 [Label5]
-Coordinates=746,41,46,33
+Coordinates=746,41,53,36
 Visible=False
 
 [ShadowEffect1]
-Coordinates=490,166,88,33
+Coordinates=490,166,101,36
 
 [Label3]
-Coordinates=591,220,46,33
+Coordinates=591,220,53,36
 Visible=False
 
 [CDAutenticacionUsuario]
-Coordinates=695,56,135,33
+Coordinates=695,56,155,36
 
 [FAGeneral]
-Coordinates=490,221,66,33
+Coordinates=490,221,77,36
 
 [EdPuerto]
-Coordinates=890,240,60,51
+Coordinates=890,240,68,58
 
 [lblNohayTerceros]
-Coordinates=471,339,101,51
+Coordinates=471,339,115,58
 
 [ListView1]
-Coordinates=190,10,89,141
+Coordinates=190,10,107,168
 Visible=True
 
 [CDSTercero]
-Coordinates=27,275,73,33
+Coordinates=27,275,86,36
 Visible=False
 
 [AIPpalCargando]
-Coordinates=930,420,94,33
+Coordinates=930,420,109,36
 
 [CDSTerceroPAIS]
-Coordinates=695,111,97,33
+Coordinates=695,111,115,36
 
 [CDSTerceroCITY]
-Coordinates=695,166,97,33
+Coordinates=695,166,115,36
 
 [CDSTerceroDEPARTAMENTO]
-Coordinates=835,1,160,33
+Coordinates=835,1,192,36
 
 [CDSTerceroCREDITLMT]
-Coordinates=695,221,133,33
+Coordinates=695,221,159,36
 
 [CDSTerceroPHONE1]
-Coordinates=695,276,116,33
+Coordinates=695,276,138,36
 
 [CDSTerceroCOMPANY]
-Coordinates=695,331,126,33
+Coordinates=695,331,150,36
 
 [CDSTerceroID_N]
-Coordinates=695,386,97,33
+Coordinates=695,386,115,36
 
 [CDSTerceroNIT]
-Coordinates=695,441,90,33
+Coordinates=695,441,106,36
 
 [SBTerceros]
-Coordinates=490,276,72,51
+Coordinates=490,276,82,58
 
 [CPCargando]
-Coordinates=935,516,76,33
+Coordinates=935,516,88,36
 
 [CDSTerceroCONTACT1]
-Coordinates=1065,1,129,33
+Coordinates=1065,1,154,36
 
 [CDSTerceroADDR1]
-Coordinates=892,56,109,33
+Coordinates=892,56,129,36
 
 [BindSourceDB1]
-Coordinates=10,10,92,249
+Coordinates=10,10,110,300
 
 [TIInformacion_Cliente]
-Coordinates=1108,198,122,33
+Coordinates=1108,198,141,36
 
 [CBTelefonos]
-Coordinates=494,409,84,123
+Coordinates=494,409,101,146
 
 [CDSShipto]
-Coordinates=910,610,68,33
+Coordinates=910,610,78,36
 Visible=False
 
 [Label11]
-Coordinates=692,41,52,33
+Coordinates=692,41,60,36
 Visible=False
 
 [ToolBar2]
-Coordinates=372,731,58,33
+Coordinates=372,731,67,36
 
 [Label15]
-Coordinates=555,731,52,33
+Coordinates=555,731,60,36
 Visible=False
 
 [lblNoTieneCartera]
-Coordinates=1010,620,103,51
+Coordinates=1010,620,119,58
 
 [CDSShiptoSUCCLIENTE]
-Coordinates=868,230,133,33
+Coordinates=868,230,159,36
 
 [LTDisponible]
-Coordinates=824,582,79,51
+Coordinates=824,582,90,58
 
 [CDSShiptoCOMPANY]
-Coordinates=868,282,120,33
+Coordinates=868,282,142,36
 
 [Label8]
-Coordinates=500,693,46,33
+Coordinates=500,693,53,36
 Visible=False
 
 [Layout2]
-Coordinates=313,731,53,33
+Coordinates=313,731,60,36
 Visible=False
 
 [Panel3]
-Coordinates=264,731,47,33
+Coordinates=264,731,55,36
 Visible=False
 
 [LNombre_Cliente]
-Coordinates=760,750,99,51
+Coordinates=760,750,114,58
 
 [Label14]
-Coordinates=673,688,52,33
+Coordinates=673,688,60,36
 Visible=False
 
 [SpeedButton2]
-Coordinates=673,548,84,33
+Coordinates=673,548,96,36
 Visible=False
 
 [CBShipto]
-Coordinates=310,10,84,123
+Coordinates=310,10,101,146
 
 [Label9]
-Coordinates=881,248,46,33
+Coordinates=881,248,53,36
 Visible=False
 
 [Layout1]
-Coordinates=87,731,53,33
+Coordinates=87,731,60,36
 Visible=False
 
 [Layout3]
-Coordinates=550,660,53,33
+Coordinates=550,660,60,36
 Visible=False
 
 [LTCartera]
-Coordinates=490,650,62,51
+Coordinates=490,650,72,58
 
 [Label10]
-Coordinates=614,731,52,33
+Coordinates=614,731,60,36
 Visible=False
 
 [EdNit]
-Coordinates=403,551,41,51
+Coordinates=403,551,46,58
 
 [LTCupo]
-Coordinates=760,680,53,51
+Coordinates=760,680,60,58
 
 [BindSourceDB2]
-Coordinates=470,20,92,141
+Coordinates=470,20,106,152
 
 [TIPedido]
-Coordinates=690,830,57,33
+Coordinates=690,830,66,36
 
 [LVCartera]
-Coordinates=986,61,106,213
+Coordinates=986,61,127,256
 Visible=True
 
 [Label12]
-Coordinates=647,99,52,33
+Coordinates=647,99,60,36
 Visible=False
 
 [BindingsList1]
-Coordinates=481,53,82,33
+Coordinates=481,53,91,36
 
 [pnlTotalCartera]
-Coordinates=610,720,90,33
+Coordinates=610,720,104,36
 
 [btDisponible]
-Coordinates=913,638,76,51
+Coordinates=913,638,86,58
 
 [Label20]
-Coordinates=140,770,52,33
+Coordinates=140,770,60,36
 Visible=False
 
 [Label19]
-Coordinates=457,570,52,33
+Coordinates=457,570,60,36
 Visible=False
 
 [BtTelefono]
-Coordinates=330,480,84,123
+Coordinates=330,480,101,146
 
 [TCBusquedaItems]
-Coordinates=1159,357,104,33
+Coordinates=1159,357,121,36
 
 [LNombre_ClientePedido]
-Coordinates=1159,131,133,51
+Coordinates=1159,131,154,58
 
 [SpeedButton5]
-Coordinates=712,188,84,33
+Coordinates=712,188,96,36
 Visible=False
 
 [SBItems]
-Coordinates=421,819,55,51
+Coordinates=421,819,63,58
 
 [lblNoExistencias]
-Coordinates=815,167,96,51
+Coordinates=815,167,109,58
 
 [LVDisponibilidadItem]
-Coordinates=1107,120,119,177
+Coordinates=1110,110,136,212
 Visible=True
 
 [Panel5]
-Coordinates=525,613,47,33
+Coordinates=525,613,55,36
 Visible=False
 
 [Panel4]
-Coordinates=892,392,47,33
+Coordinates=892,392,55,36
 Visible=False
 
 [Label17]
-Coordinates=457,416,52,33
+Coordinates=457,416,60,36
 Visible=False
 
 [TIDisponibilidadItem]
-Coordinates=1159,467,115,33
+Coordinates=1159,467,132,36
 
 [ToolBar4]
-Coordinates=1132,522,58,33
+Coordinates=1132,522,67,36
 
 [TIBucar_Item]
-Coordinates=919,733,79,33
+Coordinates=919,733,92,36
 
 [SpeedButton7]
-Coordinates=1029,62,84,33
+Coordinates=1029,62,96,36
 Visible=False
 
 [lblItemSeleccionado]
-Coordinates=974,129,113,51
+Coordinates=974,129,130,58
 
 [TIBusquedaItems]
-Coordinates=919,788,100,33
+Coordinates=919,788,115,36
 
 [SpeedButton3]
-Coordinates=920,41,84,33
+Coordinates=920,41,96,36
 Visible=False
 
 [cbShiptoDetPed]
-Coordinates=630,10,93,123
+Coordinates=630,10,107,146
 
 [Label18]
-Coordinates=695,765,52,33
+Coordinates=695,765,60,36
 Visible=False
 
 [Label16]
-Coordinates=626,819,52,33
+Coordinates=626,819,60,36
 Visible=False
 
 [ToolBar3]
-Coordinates=842,819,58,33
+Coordinates=842,819,67,36
 
 [SpeedButton4]
-Coordinates=270,790,84,33
+Coordinates=270,790,96,36
 Visible=False
 
 [Label13]
-Coordinates=676,111,52,33
+Coordinates=676,111,60,36
 Visible=False
 
 [EdNitPedido]
-Coordinates=1065,177,75,51
+Coordinates=1065,177,86,58
 
 [SpeedButton6]
-Coordinates=490,493,84,33
+Coordinates=490,493,96,36
 Visible=False
 
 [CDSItems]
-Coordinates=220,330,62,33
+Coordinates=220,330,73,36
 Visible=False
 
 [CDSItemsDESCRIPCION]
-Coordinates=317,152,134,33
+Coordinates=317,152,161,36
 
 [CDSItemsPRICE]
-Coordinates=21,278,94,33
+Coordinates=21,278,112,36
 
 [CDSItemsITEM]
-Coordinates=31,278,87,33
+Coordinates=31,278,103,36
 
 [CDSItemsMAN_LOTE]
-Coordinates=317,152,119,33
+Coordinates=317,152,141,36
 
 [CDSItemsPRICE_SIN_DESC]
-Coordinates=317,152,151,33
+Coordinates=317,152,183,36
 
 [CDSItemsRATE]
-Coordinates=21,278,91,33
+Coordinates=21,278,107,36
 
 [CDSItemsCantidad]
-Coordinates=335,207,107,33
+Coordinates=335,207,124,36
 
 [LVItems]
-Coordinates=11,329,89,159
+Coordinates=11,329,107,190
 Visible=True
 
 [BindSourceDB3]
-Coordinates=220,330,95,195
+Coordinates=220,330,113,234
 
 [EdBodega]
-Coordinates=10,710,65,51
+Coordinates=10,710,74,58
 
 [ListBoxGroupHeader1]
-Coordinates=850,610,123,33
+Coordinates=850,610,142,36
 
 [Label24]
-Coordinates=283,827,52,33
+Coordinates=283,827,60,36
 Visible=False
 
 [ListBoxItem1]
-Coordinates=870,330,79,33
-
-[EdCantidad]
-Coordinates=10,770,71,51
+Coordinates=870,330,89,36
 
 [ListBoxItem2]
-Coordinates=510,720,79,33
+Coordinates=510,720,89,36
 
 [EdITotal]
-Coordinates=20,950,54,51
+Coordinates=20,950,63,58
 
 [ListBoxItem8]
-Coordinates=540,750,79,33
+Coordinates=540,750,89,36
 
 [Label26]
-Coordinates=722,405,52,33
+Coordinates=722,405,60,36
 Visible=False
 
 [ListBoxItem3]
-Coordinates=1151,577,79,33
+Coordinates=1151,577,89,36
 
 [TIPedidoItems]
-Coordinates=911,843,84,33
+Coordinates=911,843,97,36
 
 [EdIva]
-Coordinates=10,530,41,51
+Coordinates=10,530,47,58
 
 [ListBoxItem4]
-Coordinates=911,898,79,33
+Coordinates=911,898,89,36
 
 [SpeedButton8]
-Coordinates=371,474,84,33
+Coordinates=371,474,96,36
 Visible=False
 
 [EdTCIva]
-Coordinates=10,830,55,51
+Coordinates=10,830,64,58
 
 [ListBoxItem5]
-Coordinates=911,953,79,33
+Coordinates=911,953,89,36
 
 [EdTotal]
-Coordinates=10,590,52,51
+Coordinates=10,590,59,58
 
 [Label27]
-Coordinates=120,610,52,51
+Coordinates=120,610,60,58
 Visible=True
 
 [TAPedido]
-Coordinates=892,992,62,33
+Coordinates=892,992,71,36
 
 [TIDetalleItem]
-Coordinates=793,992,78,33
+Coordinates=793,992,91,36
 
 [ListBox1]
-Coordinates=449,166,116,177
+Coordinates=449,166,139,212
 Visible=True
 
 [Label23]
-Coordinates=139,274,52,33
+Coordinates=139,274,60,36
 Visible=False
 
 [Label22]
-Coordinates=335,329,52,33
+Coordinates=335,329,60,36
 Visible=False
 
 [ListBoxItem7]
-Coordinates=694,992,79,33
+Coordinates=694,992,89,36
 
 [EdvlrUnitario]
-Coordinates=10,890,79,51
+Coordinates=10,890,89,58
 
 [ListBoxGroupHeader2]
-Coordinates=1065,331,123,33
+Coordinates=1065,331,142,36
 
 [EdTSIva]
-Coordinates=10,650,54,51
+Coordinates=10,650,64,58
 
 [ListBoxItem6]
-Coordinates=595,992,79,33
+Coordinates=595,992,89,36
 
 [CDSPedidoD]
-Coordinates=180,610,77,33
+Coordinates=180,610,91,36
 Visible=False
 
 [CDSPedidoDPRICE]
-Coordinates=1163,56,109,33
+Coordinates=1163,56,130,36
 
 [CDSPedidoDIVA_STR]
-Coordinates=1065,386,121,33
+Coordinates=1065,386,144,36
 
 [CDSPedidoDPRICE_SIN_DESC]
-Coordinates=1257,1,166,33
+Coordinates=1257,1,200,36
 
 [CDSPedidoDPRECIO_STR]
-Coordinates=1065,441,143,33
+Coordinates=1065,441,172,36
 
 [CDSPedidoDTOTAL_STR]
-Coordinates=1065,496,138,33
+Coordinates=1065,496,164,36
 
 [SpeedButton9]
-Coordinates=813,861,84,33
+Coordinates=813,861,96,36
 Visible=False
 
 [CDSPedidoDDESCRIPCION]
-Coordinates=735,724,149,33
+Coordinates=735,724,179,36
 
 [CDSPedidoDPOSICION]
-Coordinates=1065,551,128,33
+Coordinates=1065,551,153,36
 
 [CDSPedidoDCANTIDAD]
-Coordinates=1065,606,131,33
+Coordinates=1065,606,156,36
 
 [CDSPedidoDSUBTOTAL]
-Coordinates=1065,661,133,33
+Coordinates=1065,661,158,36
 
 [CDSPedidoDSUBTOTAL_STR]
-Coordinates=1275,111,160,33
+Coordinates=1275,111,190,36
 
 [CDSPedidoDITEM]
-Coordinates=1275,166,102,33
+Coordinates=1275,166,121,36
 
 [Panel6]
-Coordinates=952,392,47,33
+Coordinates=952,392,55,36
 Visible=False
 
 [CDSPedidoDTOTAL]
-Coordinates=1275,221,112,33
+Coordinates=1275,221,132,36
 
 [CDSPedidoDNOTES]
-Coordinates=1275,276,113,33
+Coordinates=1275,276,134,36
 
 [CDSPedidoDRATE]
-Coordinates=1275,331,105,33
+Coordinates=1275,331,125,36
 
 [CDSPedidoDLOC]
-Coordinates=694,827,99,33
+Coordinates=694,827,117,36
 
 [BindSourceDB4]
-Coordinates=180,610,95,375
+Coordinates=180,610,113,442
 Visible=True
 
 [LbTotalPedido]
-Coordinates=1032,100,85,33
+Coordinates=1032,100,98,36
 Visible=False
 
 [ListView2]
-Coordinates=340,740,89,213
+Coordinates=340,740,107,256
 Visible=True
 
 [EDOrdenCompra]
-Coordinates=408,613,97,51
+Coordinates=408,613,113,58
 
 [deFechaEntrega]
-Coordinates=1281,274,115,51
+Coordinates=1281,274,138,58
 
 [SpeedButton11]
-Coordinates=408,1090,89,51
+Coordinates=408,1090,103,58
 
 [ToolBar5]
-Coordinates=335,406,58,33
+Coordinates=335,406,67,36
 
 [Label21]
-Coordinates=335,262,52,51
+Coordinates=335,262,60,58
 
 [SpeedButton10]
-Coordinates=626,896,89,51
+Coordinates=626,896,103,58
 
 [SpeedButton12]
-Coordinates=626,1047,89,51
+Coordinates=626,1047,103,58
 
 [TINotas]
-Coordinates=151,557,52,33
+Coordinates=151,557,60,36
 
 [Memo1]
-Coordinates=139,197,49,51
+Coordinates=139,197,57,58
 
 [SpeedButton13]
-Coordinates=517,1090,89,51
+Coordinates=517,1090,103,58
 
 [Label25]
-Coordinates=121,1,52,51
+Coordinates=121,1,60,58
 
 [ToolBar6]
-Coordinates=121,141,58,33
+Coordinates=121,141,67,36
 
 [SpeedButton15]
-Coordinates=121,363,89,51
+Coordinates=121,363,103,58
 
 [Label28]
-Coordinates=121,71,52,51
+Coordinates=121,71,60,58
 
 [LVPediPendientes]
-Coordinates=299,1023,104,213
+Coordinates=299,1023,120,256
 Visible=True
 
 [SpeedButton14]
-Coordinates=692,493,89,51
+Coordinates=692,493,103,58
 
 [TIBuscar_Pedido]
-Coordinates=231,563,98,33
+Coordinates=231,563,113,36
+
+[EdCantidad]
+Coordinates=10,770,82,58
 

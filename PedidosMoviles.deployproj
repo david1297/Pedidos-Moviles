@@ -11,11 +11,30 @@
     </PropertyGroup>
     <ItemGroup Condition="'$(Platform)'=='iOSDevice64'"/>
     <ItemGroup Condition="'$(Platform)'=='Win64'">
+        <DeployFile Include="Win64\Debug\PedidosMoviles.exe" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>PedidosMoviles\</RemoteDir>
+            <RemoteName>PedidosMoviles.exe</RemoteName>
+            <DeployClass>ProjectOutput</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+            <Required>True</Required>
+        </DeployFile>
         <DeployFile Include="..\PedSAIMovil\PedMovil XE10.2\Logos\Isotipo SAI Móvil Fondo\48x48-mdpi.png" Condition="'$(Config)'=='Debug'">
             <RemoteDir>PedidosMoviles\Assets\</RemoteDir>
             <RemoteName>Logo44x44.png</RemoteName>
             <DeployClass>UWP_DelphiLogo44</DeployClass>
             <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="ModelSupport_PedidosMoviles\default.txaPackage" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>PedidosMoviles\</RemoteDir>
+            <RemoteName>default.txaPackage</RemoteName>
+            <DeployClass>ProjectFile</DeployClass>
+            <Operation>0</Operation>
             <LocalCommand/>
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
@@ -59,6 +78,15 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
             <Required>True</Required>
+        </DeployFile>
+        <DeployFile Include="ModelSupport_PedidosMoviles\default.txaPackage" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>PedidosMoviles\</RemoteDir>
+            <RemoteName>default.txaPackage</RemoteName>
+            <DeployClass>ProjectFile</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
         </DeployFile>
     </ItemGroup>
     <ItemGroup Condition="'$(Platform)'=='Linux64'"/>

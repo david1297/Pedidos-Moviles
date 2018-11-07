@@ -8,6 +8,7 @@ inherited Main_LgXhdpiPh: TMain_LgXhdpiPh
     Size.Width = 450.000000000000000000
     Size.Height = 695.000000000000000000
     TabHeight = 49.000000000000000000
+    TabIndex = 2
     TabPosition = None
     Sizes = (
       450s
@@ -57,6 +58,7 @@ inherited Main_LgXhdpiPh: TMain_LgXhdpiPh
       end
     end
     inherited TIInformacion_Cliente: TTabItem
+      IsSelected = False
       Size.Width = 8.000000000000000000
       Size.Height = 8.000000000000000000
       ExplicitSize.cx = 225.000000000000000000
@@ -125,30 +127,29 @@ inherited Main_LgXhdpiPh: TMain_LgXhdpiPh
           inherited LTDisponible: TLabel
             StyledSettings = [Style, FontColor]
             Size.Width = 313.000000000000000000
-            TextSettings.Font.Size = 11.000000000000000000
           end
         end
         inherited Layout3: TLayout
           Size.Width = 450.000000000000000000
           TabOrder = 3
           inherited Label14: TLabel
-            Size.Width = 73.000000000000000000
+            Size.Width = 65.000000000000000000
             TextSettings.Font.StyleExt = {00070000000000000004000000}
           end
           inherited LTCupo: TLabel
+            AutoSize = True
             StyledSettings = [FontColor]
-            Position.X = 73.000000000000000000
-            TextSettings.Font.Size = 11.000000000000000000
+            Position.X = 65.000000000000000000
           end
           inherited Label15: TLabel
-            Position.X = 193.000000000000000000
-            Size.Width = 104.000000000000000000
+            Position.X = 185.000000000000000000
+            Size.Width = 80.000000000000000000
             TextSettings.Font.StyleExt = {00070000000000000004000000}
           end
           inherited LTCartera: TLabel
+            AutoSize = True
             StyledSettings = [Style, FontColor]
-            Size.Width = 153.000000000000000000
-            TextSettings.Font.Size = 11.000000000000000000
+            Size.Width = 185.000000000000000000
           end
         end
       end
@@ -158,6 +159,8 @@ inherited Main_LgXhdpiPh: TMain_LgXhdpiPh
       end
     end
     inherited TIPedido: TTabItem
+      StyledSettings = [Family, Size, Style, FontColor, Other]
+      IsSelected = True
       Size.Width = 8.000000000000000000
       Size.Height = 8.000000000000000000
       Text = 'Pedidos'
@@ -222,7 +225,6 @@ inherited Main_LgXhdpiPh: TMain_LgXhdpiPh
         Size.Width = 450.000000000000000000
         inherited SpeedButton5: TSpeedButton
           StyleLookup = 'replytoolbutton'
-          OnClick = SpeedButton5Click
         end
         inherited SpeedButton6: TSpeedButton
           Position.X = 402.000000000000000000
@@ -250,13 +252,14 @@ inherited Main_LgXhdpiPh: TMain_LgXhdpiPh
           ExplicitSize.cy = 49.000000000000000000
           inherited ListBox1: TListBox
             Size.Width = 450.000000000000000000
-            Size.Height = 397.000000000000000000
+            Size.Height = 337.000000000000000000
             Viewport.Width = 450.000000000000000000
-            Viewport.Height = 397.000000000000000000
+            Viewport.Height = 337.000000000000000000
             inherited ListBoxItem1: TListBoxItem
               Size.Width = 450.000000000000000000
               Size.Height = 32.000000000000000000
               inherited EdCantidad: TEdit
+                KeyboardType = NumberPad
                 Position.X = 264.000000000000000000
                 Size.Width = 186.000000000000000000
                 Size.Height = 32.000000000000000000
@@ -356,21 +359,24 @@ inherited Main_LgXhdpiPh: TMain_LgXhdpiPh
                 Size.Height = 32.000000000000000000
               end
             end
-            inherited Panel6: TPanel
-              Position.Y = 6.000000000000000000
-              Size.Width = 50.000000000000000000
-              inherited SpeedButton9: TSpeedButton
-                Position.X = 2.000000000000000000
-                Size.Width = 48.000000000000000000
-              end
-              inherited SpeedButton10: TSpeedButton
-                Size.Width = 48.000000000000000000
-              end
-            end
           end
           inherited Label27: TLabel
             Size.Width = 450.000000000000000000
+            Size.Height = 49.000000000000000000
             TextSettings.Font.StyleExt = {00090000000000000004000000}
+          end
+          inherited Panel6: TPanel
+            Position.Y = 386.000000000000000000
+            Size.Width = 450.000000000000000000
+            inherited SpeedButton9: TSpeedButton
+              Position.X = 402.000000000000000000
+              Size.Width = 48.000000000000000000
+              Size.Height = 48.000000000000000000
+            end
+            inherited SpeedButton10: TSpeedButton
+              Size.Width = 48.000000000000000000
+              Size.Height = 48.000000000000000000
+            end
           end
         end
         inherited TIPedidoItems: TTabItem
@@ -383,23 +389,22 @@ inherited Main_LgXhdpiPh: TMain_LgXhdpiPh
             Size.Width = 450.000000000000000000
             inherited Label20: TLabel
               StyledSettings = [FontColor]
+              Size.Width = 89.000000000000000000
               TextSettings.Font.StyleExt = {00070000000000000004000000}
             end
             inherited SpeedButton4: TSpeedButton
               Position.X = 402.000000000000000000
               Size.Width = 48.000000000000000000
-              Size.Height = 48.000000000000000000
             end
             inherited LbTotalPedido: TLabel
+              AutoSize = True
               StyledSettings = [Style, FontColor]
-              Size.Width = 257.000000000000000000
-              TextSettings.Font.Size = 11.000000000000000000
+              Size.Width = 265.000000000000000000
               Text = '$ 0'
             end
             inherited SpeedButton13: TSpeedButton
               Position.X = 354.000000000000000000
               Size.Width = 48.000000000000000000
-              Size.Height = 48.000000000000000000
             end
           end
           inherited ListView2: TListView
@@ -520,6 +525,33 @@ inherited Main_LgXhdpiPh: TMain_LgXhdpiPh
           inherited LVDisponibilidadItem: TListView
             Size.Width = 450.000000000000000000
             Size.Height = 541.000000000000000000
+            ItemAppearanceObjects.ItemObjects.ObjectsCollection = <
+              item
+                AppearanceObjectName = 'Lote'
+                AppearanceClassName = 'TTextObjectAppearance'
+                Appearance.TextAlign = Leading
+                Appearance.TextVertAlign = Leading
+                Appearance.Width = 359.000000000000000000
+                Appearance.Height = 25.000000000000000000
+              end
+              item
+                AppearanceObjectName = 'Cantidad'
+                AppearanceClassName = 'TTextObjectAppearance'
+                Appearance.TextAlign = Leading
+                Appearance.TextVertAlign = Trailing
+                Appearance.Width = 361.000000000000000000
+                Appearance.Height = 25.000000000000000000
+                Appearance.PlaceOffset.X = -2.000000000000000000
+                Appearance.PlaceOffset.Y = 24.000000000000000000
+              end
+              item
+                AppearanceObjectName = 'Cant'
+                AppearanceClassName = 'TTextObjectAppearance'
+                Appearance.Width = 137.000000000000000000
+                Appearance.Height = 50.000000000000000000
+                Appearance.Visible = False
+                Appearance.PlaceOffset.X = 382.000000000000000000
+              end>
             inherited lblNoExistencias: TLabel
               Position.Y = 259.000000000000000000
               Size.Width = 450.000000000000000000
@@ -542,6 +574,7 @@ inherited Main_LgXhdpiPh: TMain_LgXhdpiPh
         Size.Width = 450.000000000000000000
         inherited SpeedButton12: TSpeedButton
           Position.X = 402.000000000000000000
+          StyleLookup = 'donetoolbutton'
         end
         inherited Label21: TLabel
           Size.Width = 354.000000000000000000
@@ -580,7 +613,7 @@ inherited Main_LgXhdpiPh: TMain_LgXhdpiPh
       end
       inherited LVPediPendientes: TListView
         Size.Width = 450.000000000000000000
-        Size.Height = 614.000000000000000000
+        Size.Height = 598.000000000000000000
         ItemAppearance.ItemHeight = 50
         ItemAppearance.ItemEditHeight = 50
         ItemAppearanceObjects.ItemObjects.ObjectsCollection = <
@@ -623,22 +656,31 @@ inherited Main_LgXhdpiPh: TMain_LgXhdpiPh
     end
   end
   inherited CPGeneral: TCalloutPanel
+    Align = Horizontal
     Padding.Left = 5.000000000000000000
     Padding.Top = 11.000000000000000000
     Padding.Right = 5.000000000000000000
     Padding.Bottom = 5.000000000000000000
-    Position.X = 48.000000000000000000
-    Position.Y = 169.000000000000000000
-    Size.Width = 345.000000000000000000
-    Size.Height = 120.000000000000000000
+    Margins.Left = 20.000000000000000000
+    Margins.Right = 20.000000000000000000
+    Position.X = 20.000000000000000000
+    Position.Y = 136.000000000000000000
+    Size.Width = 410.000000000000000000
+    Size.Height = 81.000000000000000000
     StyleLookup = 'calloutpanelstyle'
     CalloutPosition = Top
     inherited FAGeneral: TFloatAnimation
       PropertyName = 'Opacity'
     end
     inherited LGMensaje: TLabel
-      Size.Height = 104.000000000000000000
+      Size.Width = 400.000000000000000000
+      Size.Height = 65.000000000000000000
       TextSettings.Font.StyleExt = {00070000000000000004000000}
+    end
+  end
+  inherited CPCargando: TCalloutPanel
+    inherited AIPpalCargando: TAniIndicator
+      Visible = True
     end
   end
   inherited MvConfiguracion: TMultiView
@@ -659,6 +701,7 @@ inherited Main_LgXhdpiPh: TMain_LgXhdpiPh
         Size.Width = 97.000000000000000000
       end
       inherited EdIP: TEdit
+        KeyboardType = NumberPad
         Position.X = 104.000000000000000000
         Size.Width = 131.000000000000000000
         Size.Height = 32.000000000000000000
@@ -723,5 +766,11 @@ inherited Main_LgXhdpiPh: TMain_LgXhdpiPh
   inherited BindSourceDB3: TBindSourceDB
     Left = 352
     Top = 352
+  end
+  inherited CDSPedidoD: TClientDataSet
+    inherited CDSPedidoDCANTIDAD: TFloatField
+      DisplayFormat = '###,###,##0.00'
+      EditFormat = ''
+    end
   end
 end
